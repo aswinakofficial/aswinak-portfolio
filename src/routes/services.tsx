@@ -3,7 +3,7 @@ import { Link } from '@tanstack/react-router'
 import { Check } from 'lucide-react'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { buildPageMeta } from '@/lib/seo'
+import { buildPageMeta, buildCanonicalLink, siteConfig } from '@/lib/seo'
 
 export const Route = createFileRoute('/services')({
   head: () => ({
@@ -12,6 +12,25 @@ export const Route = createFileRoute('/services')({
       description: 'AI engineering services — RAG systems, Agentic AI, LLM orchestration, and full-stack development.',
       slug: 'services',
     }),
+    links: [buildCanonicalLink('services')],
+    scripts: [
+      {
+        type: 'application/ld+json',
+        children: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'ProfessionalService',
+          name: `${siteConfig.name} — AI Engineering Services`,
+          url: `${siteConfig.url}/services`,
+          description: 'AI engineering services including RAG system design, Agentic AI workflows, LLM orchestration, and full-stack development.',
+          provider: {
+            '@type': 'Person',
+            name: siteConfig.name,
+            url: siteConfig.url,
+          },
+          serviceType: ['RAG System Design', 'Agentic AI Workflows', 'LLM Orchestration', 'Full-Stack Development'],
+        }),
+      },
+    ],
   }),
   component: ServicesPage,
 })

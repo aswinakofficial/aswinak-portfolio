@@ -4,7 +4,7 @@ import { Skills } from '@/components/home/skills'
 import { FeaturedProjects } from '@/components/home/featured-projects'
 import { LatestPosts } from '@/components/home/latest-posts'
 import { HireCta } from '@/components/home/hire-cta'
-import { buildPageMeta, siteConfig } from '@/lib/seo'
+import { buildPageMeta, buildCanonicalLink, siteConfig } from '@/lib/seo'
 
 export const Route = createFileRoute('/')({
   head: () => ({
@@ -15,6 +15,7 @@ export const Route = createFileRoute('/')({
         content: 'AI Engineer, RAG, LangChain, Azure, Full-Stack Developer, Agentic AI',
       },
     ],
+    links: [buildCanonicalLink()],
     scripts: [
       {
         type: 'application/ld+json',

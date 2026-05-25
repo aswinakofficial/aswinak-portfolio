@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { getAllPosts } from '@/lib/content'
 import { PostCard } from '@/components/blog/post-card'
-import { buildPageMeta } from '@/lib/seo'
+import { buildPageMeta, buildCanonicalLink } from '@/lib/seo'
 
 export const Route = createFileRoute('/blog/')({
   loader: () => getAllPosts(),
@@ -11,6 +11,7 @@ export const Route = createFileRoute('/blog/')({
       description: 'Articles on AI engineering, RAG pipelines, LLM orchestration, and full-stack development.',
       slug: 'blog',
     }),
+    links: [buildCanonicalLink('blog')],
   }),
   component: BlogPage,
 })

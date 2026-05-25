@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Mail, Linkedin, Github } from 'lucide-react'
 import { ContactForm } from '@/components/contact/contact-form'
-import { buildPageMeta, siteConfig } from '@/lib/seo'
+import { buildPageMeta, buildCanonicalLink, siteConfig } from '@/lib/seo'
 
 export const Route = createFileRoute('/contact')({
   head: () => ({
@@ -10,6 +10,7 @@ export const Route = createFileRoute('/contact')({
       description: 'Get in touch with Aswin AK for AI engineering projects, freelance work, or collaboration.',
       slug: 'contact',
     }),
+    links: [buildCanonicalLink('contact')],
   }),
   component: ContactPage,
 })

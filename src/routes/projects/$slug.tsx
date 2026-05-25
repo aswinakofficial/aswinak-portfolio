@@ -1,7 +1,7 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 import { getProjectBySlug, getProjectModule } from '@/lib/content'
 import { MdxComponents } from '@/components/blog/mdx-components'
-import { buildPageMeta, siteConfig } from '@/lib/seo'
+import { buildPageMeta, buildCanonicalLink, siteConfig } from '@/lib/seo'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ExternalLink, Github } from 'lucide-react'
@@ -23,6 +23,7 @@ export const Route = createFileRoute('/projects/$slug')({
           slug: `projects/${project.slug}`,
         }),
       ],
+      links: [buildCanonicalLink(`projects/${project.slug}`)],
       scripts: [
         {
           type: 'application/ld+json',
@@ -33,6 +34,18 @@ export const Route = createFileRoute('/projects/$slug')({
             description: project.frontmatter.description,
             author: { '@type': 'Person', name: siteConfig.name },
             url: `${siteConfig.url}/projects/${project.slug}`,
+          }),
+        },
+        {
+          type: 'application/ld+json',
+          children: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.url },
+              { '@type': 'ListItem', position: 2, name: 'Projects', item: `${siteConfig.url}/projects` },
+              { '@type': 'ListItem', position: 3, name: project.frontmatter.title },
+            ],
           }),
         },
       ],

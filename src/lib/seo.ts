@@ -39,3 +39,8 @@ export function buildPageMeta(options: {
     { name: 'twitter:image', content: image },
   ]
 }
+
+export function buildCanonicalLink(slug?: string) {
+  const href = slug ? `${siteConfig.url}/${slug}` : siteConfig.url
+  return { rel: 'canonical', href }
+}

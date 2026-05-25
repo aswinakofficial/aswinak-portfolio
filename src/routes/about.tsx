@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { buildPageMeta } from '@/lib/seo'
+import { buildPageMeta, buildCanonicalLink, siteConfig } from '@/lib/seo'
 import { about } from '@/lib/siteContent'
 
 export const Route = createFileRoute('/about')({
@@ -9,6 +9,21 @@ export const Route = createFileRoute('/about')({
       description: 'Learn more about Aswin AK — AI Engineer, Full-Stack Developer, and Azure AI-102 certified professional.',
       slug: 'about',
     }),
+    links: [buildCanonicalLink('about')],
+    scripts: [
+      {
+        type: 'application/ld+json',
+        children: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          name: siteConfig.name,
+          jobTitle: 'AI Engineer & Full-Stack Developer',
+          url: siteConfig.url,
+          description: 'AI Engineer specializing in RAG pipelines, Agentic AI, and LLM orchestration. Azure AI-102 certified.',
+          sameAs: [siteConfig.links.github, siteConfig.links.linkedin],
+        }),
+      },
+    ],
   }),
   component: AboutPage,
 })

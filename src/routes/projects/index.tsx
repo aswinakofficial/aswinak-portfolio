@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { getAllProjects } from '@/lib/content'
 import { ProjectGrid } from '@/components/projects/project-grid'
-import { buildPageMeta } from '@/lib/seo'
+import { buildPageMeta, buildCanonicalLink } from '@/lib/seo'
 
 export const Route = createFileRoute('/projects/')({
   loader: () => getAllProjects(),
@@ -11,6 +11,7 @@ export const Route = createFileRoute('/projects/')({
       description: 'AI systems, RAG pipelines, and full-stack applications built by Aswin AK.',
       slug: 'projects',
     }),
+    links: [buildCanonicalLink('projects')],
   }),
   component: ProjectsPage,
 })

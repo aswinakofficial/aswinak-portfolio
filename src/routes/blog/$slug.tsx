@@ -3,7 +3,7 @@ import { Clock } from 'lucide-react'
 import { getPostBySlug, getPostModule } from '@/lib/content'
 import { MdxComponents } from '@/components/blog/mdx-components'
 import { ReadingProgress } from '@/components/blog/reading-progress'
-import { buildPageMeta, siteConfig } from '@/lib/seo'
+import { buildPageMeta, buildCanonicalLink, siteConfig } from '@/lib/seo'
 import { formatDate } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
 
@@ -24,6 +24,7 @@ export const Route = createFileRoute('/blog/$slug')({
           type: 'article',
         }),
       ],
+      links: [buildCanonicalLink(`blog/${post.slug}`)],
       scripts: [
         {
           type: 'application/ld+json',
@@ -35,6 +36,18 @@ export const Route = createFileRoute('/blog/$slug')({
             author: { '@type': 'Person', name: siteConfig.name },
             datePublished: post.frontmatter.publishedAt,
             url: `${siteConfig.url}/blog/${post.slug}`,
+          }),
+        },
+        {
+          type: 'application/ld+json',
+          children: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.url },
+              { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteConfig.url}/blog` },
+              { '@type': 'ListItem', position: 3, name: post.frontmatter.title },
+            ],
           }),
         },
       ],
