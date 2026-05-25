@@ -6,14 +6,14 @@ import { footer as footerContent } from '@/lib/siteContent'
 export function Footer() {
   return (
     <footer style={{ background: '#0A0A0A', color: '#FFFBF0' }}>
-      <div className="mx-auto max-w-[1280px] px-12 pt-16 pb-10">
+      <div className="mx-auto max-w-[1280px] px-4 sm:px-8 md:px-12 pt-16 pb-10">
         {/* 4-column grid */}
         <div
-          className="grid gap-8 pb-12"
-          style={{ gridTemplateColumns: '2fr 1fr 1fr 1fr', borderBottom: '1px solid rgba(255,251,240,0.2)' }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 pb-12"
+          style={{ borderBottom: '1px solid rgba(255,251,240,0.2)' }}
         >
           {/* Col 1: Brand + bio + socials */}
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-5">
               <span
                 className="flex h-11 w-11 items-center justify-center bg-secondary text-secondary-foreground text-lg font-black"
@@ -108,7 +108,7 @@ export function Footer() {
         </div>
 
         {/* Bottom strip */}
-        <div className="flex justify-between items-center pt-7 font-mono text-xs" style={{ opacity: 0.5 }}>
+        <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2 pt-7 font-mono text-xs" style={{ opacity: 0.5 }}>
           <span>© {new Date().getFullYear()} {footerContent.copyright} · All rights reserved.</span>
           <span>Built with {footerContent.builtWith}</span>
         </div>

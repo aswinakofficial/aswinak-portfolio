@@ -25,7 +25,7 @@ export function Hero() {
     : {}
 
   return (
-    <section className="brut-dotgrid relative overflow-hidden px-12 pb-28 pt-20" style={{ maxWidth: '100%' }}>
+    <section className="brut-dotgrid relative overflow-hidden px-4 sm:px-8 md:px-12 pb-16 pt-12 md:pb-28 md:pt-20" style={{ maxWidth: '100%' }}>
       {/* Corner stickers */}
       <div
         className="absolute hidden xl:block top-24 right-44 border-[4px] border-border bg-blue text-white px-4 py-3 font-black text-sm uppercase leading-snug neo-shadow"

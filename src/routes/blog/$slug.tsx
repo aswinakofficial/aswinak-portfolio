@@ -78,7 +78,7 @@ function BlogPostPage() {
       <ReadingProgress />
       <article>
         {/* Header */}
-        <div className="border-b-[5px] border-border px-12 pt-16 pb-16 brut-dotgrid">
+        <div className="border-b-[5px] border-border px-4 sm:px-8 md:px-12 pt-10 pb-10 md:pt-16 md:pb-16 brut-dotgrid">
           <div className="mx-auto max-w-[1280px]">
             {/* Breadcrumb + tags */}
             <div className="flex items-center gap-3 font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-7">

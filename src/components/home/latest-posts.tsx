@@ -18,13 +18,13 @@ export function LatestPosts() {
   if (posts.length === 0) return null
 
   return (
-    <section className="border-t-[4px] border-border py-28">
-      <div className="mx-auto max-w-[1280px] px-12">
+    <section className="border-t-[4px] border-border py-16 md:py-28">
+      <div className="mx-auto max-w-[1280px] px-4 sm:px-8 md:px-12">
         <p className="font-mono text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground mb-4">
           § 03 — Writing
         </p>
-        <div className="flex items-end justify-between mb-10">
-          <h2 className="font-display font-black text-[56px] leading-none tracking-[-0.04em]">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-10">
+          <h2 className="font-display font-black leading-none tracking-[-0.04em]" style={{ fontSize: 'clamp(32px, 7vw, 56px)' }}>
             <span
               className="inline-block w-14 h-[18px] border-[3px] border-border mr-3 align-middle bg-blue"
               style={{ transform: 'rotate(-2deg)' }}
@@ -33,7 +33,7 @@ export function LatestPosts() {
           </h2>
           <Link
             to="/blog"
-            className="hidden md:inline-flex items-center gap-1.5 px-4 py-2.5 border-[3px] border-border bg-card font-black text-xs uppercase tracking-wide neo-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
+            className="mt-3 sm:mt-0 inline-flex items-center gap-1.5 px-4 py-2.5 border-[3px] border-border bg-card font-black text-xs uppercase tracking-wide neo-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
           >
             Archive <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={3} />
           </Link>

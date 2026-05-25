@@ -16,7 +16,7 @@ export function HireCta() {
         }}
       />
 
-      <div className="relative mx-auto max-w-[1280px] px-12">
+      <div className="relative mx-auto max-w-[1280px] px-4 sm:px-8 md:px-12">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <div>
             <span className="hire-cta-badge inline-flex items-center gap-2 border-[3px] px-3 py-1.5 font-black text-xs uppercase tracking-widest mb-5">

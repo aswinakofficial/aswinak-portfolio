@@ -2,13 +2,13 @@ import { skills } from '@/lib/siteContent'
 
 export function Skills() {
   return (
-    <section className="border-t-[4px] border-border py-28">
-      <div className="mx-auto max-w-[1280px] px-12">
+    <section className="border-t-[4px] border-border py-16 md:py-28">
+      <div className="mx-auto max-w-[1280px] px-4 sm:px-8 md:px-12">
         <p className="font-mono text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground mb-4">
           § 01 — Stack
         </p>
-        <div className="flex items-end justify-between mb-10">
-          <h2 className="font-display font-black text-[56px] leading-none tracking-[-0.04em]">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-10">
+          <h2 className="font-display font-black leading-none tracking-[-0.04em]" style={{ fontSize: 'clamp(32px, 7vw, 56px)' }}>
             What I work with.
           </h2>
         </div>

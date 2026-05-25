@@ -52,7 +52,7 @@ function CategoryDropdown({
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="inline-flex items-center gap-3 px-5 py-3.5 border-[4px] border-foreground font-black text-lg uppercase tracking-tight neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all min-w-[280px] justify-between bg-card dark:bg-[#FFFBF0] text-foreground dark:text-[#0A0A0A]"
+        className="inline-flex items-center gap-3 px-5 py-3.5 border-[4px] border-foreground font-black text-lg uppercase tracking-tight neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all w-full sm:min-w-[280px] sm:w-auto justify-between bg-card dark:bg-[#FFFBF0] text-foreground dark:text-[#0A0A0A]"
       >
         <span className="flex items-center gap-3">
           <span
@@ -70,7 +70,7 @@ function CategoryDropdown({
 
       {open && (
         <div
-          className="absolute top-[calc(100%+6px)] right-0 min-w-[320px] border-[4px] z-20"
+          className="absolute top-[calc(100%+6px)] left-0 sm:left-auto right-0 w-full sm:min-w-[320px] border-[4px] z-20"
           style={{ background: '#1a1a1a', borderColor: '#FFFBF0', boxShadow: '6px 6px 0 0 #FFFBF0' }}
         >
           {categories.map((c) => (
@@ -129,12 +129,12 @@ export function FeaturedProjects() {
     <section
       className="border-t-[5px] border-b-[5px] border-border py-28 bg-background text-foreground"
     >
-      <div className="mx-auto max-w-[1280px] px-12">
+      <div className="mx-auto max-w-[1280px] px-4 sm:px-8 md:px-12">
         <p className="font-mono text-xs font-semibold uppercase tracking-[0.1em] mb-4 text-muted-foreground">
           § 02 — Selected Work
         </p>
 
-        <div className="flex items-end justify-between gap-6 mb-10">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-10">
           <div>
             <h2
               className="font-display font-black leading-none tracking-[-0.04em] mb-4"

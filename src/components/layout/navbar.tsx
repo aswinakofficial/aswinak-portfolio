@@ -14,7 +14,7 @@ const navLinks = [
 export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b-[4px] border-border bg-background">
-      <div className="mx-auto flex h-[66px] max-w-[1280px] items-center px-12">
+      <div className="mx-auto flex h-[66px] max-w-[1280px] items-center px-4 sm:px-8 md:px-12">
         {/* Logomark + wordmark */}
         <Link to="/" className="mr-8 flex items-center gap-2.5 shrink-0">
           <span
