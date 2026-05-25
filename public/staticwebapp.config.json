@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/staticwebapp.config.json",
   "navigationFallback": {
     "rewrite": "/index.html",
-    "exclude": ["/images/*", "/assets/*", "*.{css,js,ico,png,svg,webp,woff2}"]
+    "exclude": ["/images/*", "/assets/*", "*.{css,js,ico,png,svg,webp,woff2,xml,txt}"]
   },
   "routes": [
     {
@@ -32,6 +32,7 @@
     "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
   },
   "mimeTypes": {
-    ".json": "application/json"
+    ".json": "application/json",
+    ".xml": "application/xml"
   }
 }
