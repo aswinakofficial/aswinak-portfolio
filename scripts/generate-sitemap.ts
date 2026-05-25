@@ -1,7 +1,7 @@
 import { writeFileSync } from 'fs'
 import { glob } from 'glob'
 
-const BASE_URL = 'https://aswinak.dev'
+const BASE_URL = 'https://aswin.xpar.in'
 const STATIC_ROUTES = ['/', '/about', '/projects', '/blog', '/services', '/contact']
 
 async function generateSitemap() {
