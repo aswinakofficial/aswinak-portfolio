@@ -1,0 +1,29 @@
+---
+title: "Enterprise RAG System"
+description: "Production RAG pipeline indexing millions of unstructured documents for AI-assisted research."
+category: "Solutions"
+tags: ["Databricks", "LangChain", "Python", "Azure", "FastAPI"]
+featured: true
+demo: null
+github: null
+slug: "enterprise-rag"
+---
+
+## The challenge
+
+The team needed to make millions of unstructured tax and legal documents searchable by an AI assistant that could provide accurate, grounded answers with citations.
+
+## Solution
+
+Built an end-to-end RAG pipeline on Azure and Databricks:
+
+- **Ingestion**: Document pipeline with semantic chunking, metadata enrichment, and incremental indexing
+- **Retrieval**: Hybrid dense + sparse search with cross-encoder reranking
+- **Generation**: LangChain orchestration with hallucination guards and citation tracking
+- **API**: FastAPI service with streaming responses
+
+## Outcomes
+
+- Indexed 2M+ documents with sub-second retrieval latency
+- 85% reduction in research time for subject-matter experts
+- Hallucination rate below 2% on internal benchmarks

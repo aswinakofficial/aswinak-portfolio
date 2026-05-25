@@ -1,0 +1,39 @@
+---
+title: "How I built an enterprise RAG pipeline that indexes millions of documents"
+description: "A deep dive into building a production RAG system using Databricks, LangChain, and Azure — the architecture, the pitfalls, and what I learned."
+publishedAt: "2026-05-01"
+tags: ["RAG", "LangChain", "Databricks", "Azure", "Python"]
+slug: "how-i-built-rag-pipeline"
+---
+
+## The problem
+
+Most teams building RAG systems hit the same wall: a proof-of-concept that works great on 100 documents completely falls apart at a million.
+
+In this post I'll walk through the architecture we built to index millions of unstructured documents and serve accurate, grounded answers at production latency.
+
+## Architecture overview
+
+The pipeline has three main stages:
+
+1. **Ingestion** — Documents arrive via blob storage events and are chunked, enriched with metadata, and pushed to a vector index
+2. **Retrieval** — Hybrid search (dense + sparse) with cross-encoder reranking
+3. **Generation** — LLM call with grounded context, citations, and hallucination guards
+
+## Key learnings
+
+### Chunking strategy matters more than the embedding model
+
+We spent weeks tuning embedding models before realising our chunking was the bottleneck. Semantic chunking with a 50-token overlap beat fixed-size chunking by 18 points on our eval set.
+
+### Reranking is non-negotiable at scale
+
+First-pass retrieval is noisy. A cross-encoder reranker reduced false-positive context inclusion by 40%, which directly translated to fewer hallucinations.
+
+### Build an eval harness before optimising anything
+
+You can't optimise what you can't measure. We built a simple RAGAs-compatible eval harness from day one and it saved us from several "improvements" that actually made things worse.
+
+## What's next
+
+In the next post I'll go deeper on the evaluation framework and how we track quality regressions across deployments.

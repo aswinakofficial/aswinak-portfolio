@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aswinak.dev/sitemap.xml

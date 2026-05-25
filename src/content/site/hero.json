@@ -1,0 +1,18 @@
+{
+  "certBadge": "Azure AI-102 Certified",
+  "location": "Kerala, India · UTC+5:30",
+  "name": "Aswin AK",
+  "tagline": "— an AI engineer & full-stack dev. I design and ship RAG pipelines, agentic workflows, and the interfaces around them. No magic. No vibes. Just systems that hold up in production.",
+  "stickerAvailability": "Open to contract work",
+  "stickerCurrent": "Shipping v4 of folio",
+  "rolePills": [
+    { "label": "RAG & Agents", "color": "bg-blue text-white" },
+    { "label": "Full-Stack", "color": "bg-orange text-white" },
+    { "label": "LangChain", "color": "bg-secondary text-secondary-foreground" },
+    { "label": "N8N", "color": "bg-card text-foreground" },
+    { "label": "Next.js", "color": "bg-card text-foreground" },
+    { "label": "Python", "color": "bg-card text-foreground" },
+    { "label": "Flutter", "color": "bg-card text-foreground" },
+    { "label": "Azure", "color": "bg-card text-foreground" }
+  ]
+}

@@ -1,0 +1,27 @@
+---
+title: "RAG Starter Kit"
+description: "Open-source boilerplate for quickly bootstrapping production-grade RAG systems."
+category: "Open Source"
+tags: ["Python", "LangChain", "Docker", "FastAPI", "Qdrant"]
+featured: false
+demo: null
+github: null
+slug: "rag-starter-kit"
+---
+
+## Overview
+
+A batteries-included starter kit for building RAG systems without the boilerplate. Includes ingestion, retrieval, evaluation, and a simple chat UI out of the box.
+
+## What's included
+
+- **Ingestion pipeline** with chunking strategies and metadata extraction
+- **Vector store** integration (Qdrant by default, swappable)
+- **FastAPI backend** with OpenAI-compatible `/chat` endpoint
+- **Evaluation harness** using RAGAs metrics
+- **Docker Compose** for local development
+- **GitHub Actions** CI pipeline
+
+## Getting started
+
+Clone the repo and run `docker compose up`. The ingestion pipeline, vector store, and API are ready in under a minute.

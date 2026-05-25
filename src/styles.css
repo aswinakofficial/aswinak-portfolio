@@ -1,0 +1,249 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "Archivo Black", "Space Grotesk", ui-sans-serif, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand accents — hardcoded, no :root counterpart */
+  --color-orange: #FF5C00;
+  --color-blue: #0047FF;
+  --color-neo-yellow: #FFE500;
+
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 2px;
+}
+
+:root {
+  --radius: 0rem;
+  --background: #FFFBF0;
+  --foreground: #0A0A0A;
+  --card: #FFFFFF;
+  --card-foreground: #0A0A0A;
+  --popover: #FFFFFF;
+  --popover-foreground: #0A0A0A;
+  --primary: #0A0A0A;
+  --primary-foreground: #FFFBF0;
+  --secondary: #FFE500;
+  --secondary-foreground: #0A0A0A;
+  --muted: hsl(44 30% 93%);
+  --muted-foreground: #5C5C5C;
+  --accent: #FFE500;
+  --accent-foreground: #0A0A0A;
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: #FAFAFA;
+  --border: #0A0A0A;
+  --input: #0A0A0A;
+  --ring: #FF5C00;
+}
+
+.dark {
+  --background: #0A0A0A;
+  --foreground: #FFFBF0;
+  --card: #141414;
+  --card-foreground: #FFFBF0;
+  --popover: #141414;
+  --popover-foreground: #FFFBF0;
+  --primary: #FFFBF0;
+  --primary-foreground: #0A0A0A;
+  --secondary: #FFE500;
+  --secondary-foreground: #0A0A0A;
+  --muted: #1F1F1F;
+  --muted-foreground: #999999;
+  --accent: #FFE500;
+  --accent-foreground: #0A0A0A;
+  --destructive: hsl(0 62% 40%);
+  --destructive-foreground: #FAFAFA;
+  --border: #FFFBF0;
+  --input: #FFFBF0;
+  --ring: #FF5C00;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    @apply border-border outline-ring/50;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* ── Neobrutalist utilities ── */
+.neo-shadow {
+  box-shadow: 6px 6px 0px 0px var(--border);
+}
+
+.neo-shadow-sm {
+  box-shadow: 4px 4px 0px 0px var(--border);
+}
+
+.neo-shadow-lg {
+  box-shadow: 10px 10px 0px 0px var(--border);
+}
+
+.neo-shadow-accent {
+  box-shadow: 6px 6px 0px 0px #FFE500;
+}
+
+.neo-shadow-orange {
+  box-shadow: 6px 6px 0px 0px #FF5C00;
+}
+
+/* ── Dot grid hero background ── */
+.brut-dotgrid {
+  background-image: radial-gradient(circle, rgba(10,10,10,0.45) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+.dark .brut-dotgrid {
+  background-image: radial-gradient(circle, rgba(255,251,240,0.18) 1.2px, transparent 1.2px);
+}
+
+/* ── Cert badge wiggle ── */
+@keyframes brut-wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50%       { transform: rotate(3deg); }
+}
+
+.brut-wiggle {
+  animation: brut-wiggle 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* ── Hero headline decorators ── */
+.hero-em {
+  font-style: normal;
+  background: var(--foreground);
+  color: var(--background);
+  padding: 0 12px;
+  display: inline-block;
+  transform: rotate(-1.5deg);
+  margin: 0 6px;
+  line-height: 1.1;
+}
+
+.dark .hero-em {
+  background: #FF5C00;
+  color: #0A0A0A;
+}
+
+.hero-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-underline::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  bottom: 8px;
+  height: 18px;
+  background: #FF5C00;
+  z-index: -1;
+}
+
+/* ── Card pop-in animation for category switch ── */
+@keyframes brut-pop {
+  0%   { opacity: 0; transform: translateY(14px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.brut-pop-in > * {
+  animation: brut-pop 0.3s cubic-bezier(0.2, 0.7, 0.3, 1.4) both;
+}
+
+.brut-pop-in > *:nth-child(2) { animation-delay: 0.06s; }
+.brut-pop-in > *:nth-child(3) { animation-delay: 0.12s; }
+
+/* ── Diagonal stripe texture ── */
+.brut-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0,
+    transparent 18px,
+    rgba(10, 10, 10, 0.04) 18px,
+    rgba(10, 10, 10, 0.04) 22px
+  );
+}
+
+/* ── Hire CTA ── */
+.hire-cta-section { background: #FFFBF0; }
+.dark .hire-cta-section { background: #0A0A0A; }
+
+/* Light: yellow fill + black stroke / Dark: white fill + yellow stroke */
+.hire-cta-headline {
+  color: #FFE500;
+  -webkit-text-stroke: 3px #0A0A0A;
+  paint-order: stroke fill;
+}
+.dark .hire-cta-headline {
+  color: #FFE500;
+  -webkit-text-stroke: 3px #0A0A0A;
+}
+
+.hire-cta-body { color: #333333; }
+.dark .hire-cta-body { color: rgba(255, 251, 240, 0.75); }
+
+.hire-cta-badge { background: #0A0A0A; color: #FFFBF0; border-color: #0A0A0A; }
+.dark .hire-cta-badge { background: #FFFBF0; color: #0A0A0A; border-color: #FFFBF0; }
+
+.hire-cta-primary-btn {
+  background: #0A0A0A; color: #FFFBF0;
+  border-color: #0A0A0A; box-shadow: 6px 6px 0 0 #0A0A0A;
+}
+.dark .hire-cta-primary-btn {
+  background: #FF5C00; color: #ffffff;
+  border-color: #FF5C00; box-shadow: 6px 6px 0 0 #FFFBF0;
+}
+
+.hire-cta-email-btn { border-color: #0A0A0A; color: #0A0A0A; box-shadow: 6px 6px 0 0 #0A0A0A; }
+.dark .hire-cta-email-btn { border-color: #FFFBF0; color: #FFFBF0; box-shadow: 6px 6px 0 0 #FFFBF0; }
+
+/* ── Brutalist blockquote ── */
+.brut-blockquote {
+  border-left: 8px solid var(--foreground);
+  background: #FFE500;
+  color: #0A0A0A;
+  padding: 24px 28px;
+  margin: 32px 0;
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}

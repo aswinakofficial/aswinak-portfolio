@@ -1,0 +1,15 @@
+{
+  "headline": "About Me",
+  "subheadline": "AI Engineer building production-grade intelligent systems.",
+  "bio": [
+    "I'm Aswin AK, an AI Engineer and Full-Stack Developer specializing in RAG pipelines, Agentic AI systems, and LLM orchestration. I'm Azure AI-102 certified and have experience building end-to-end AI applications that handle millions of documents in production.",
+    "I enjoy working at the intersection of cutting-edge AI research and practical software engineering — taking ideas from proof-of-concept to scalable production deployments."
+  ],
+  "experience": [
+    {
+      "title": "AI Engineer",
+      "period": "2023 — Present",
+      "description": "Building enterprise RAG systems, Agentic AI pipelines, and LLM-powered applications."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+---
+title: "RexAI — Agentic Research Assistant"
+description: "Multi-agent research workflow that autonomously gathers, synthesises, and reports on complex topics."
+category: "Solutions"
+tags: ["LangChain", "N8N", "FastAPI", "Python", "React"]
+featured: true
+demo: null
+github: null
+slug: "rexai"
+---
+
+## Overview
+
+RexAI is a multi-agent system designed to automate research workflows. Given a topic or question, it autonomously:
+
+1. Searches multiple sources (web, internal docs, databases)
+2. Synthesises findings using a planning LLM
+3. Drafts a structured report with citations
+4. Routes for human review when confidence is low
+
+## Architecture
+
+- **Orchestrator agent** built with LangChain + custom tool registry
+- **N8N workflows** for data collection and notification pipelines
+- **FastAPI backend** with async task queue
+- **React frontend** with real-time progress streaming
+
+## Technical highlights
+
+- Custom tool-calling framework with retry logic and rate limiting
+- Human-in-the-loop interrupts for low-confidence decisions
+- Streaming SSE responses for live progress feedback

@@ -1,0 +1,40 @@
+{
+  "groups": [
+    {
+      "label": "AI / ML Engineering",
+      "accent": "bg-orange text-white",
+      "lead": "Production systems that retrieve, reason, and respond. Built around real users, not benchmarks.",
+      "skills": ["LangChain", "LangGraph", "OpenAI", "Anthropic", "Azure AI", "RAG", "Vector DBs", "Pinecone", "pgvector", "Evals"]
+    },
+    {
+      "label": "Web & Backend",
+      "accent": "bg-foreground text-background",
+      "lead": "Full-stack TypeScript and Python. APIs, dashboards, and the gnarly glue in between.",
+      "skills": ["React", "Next.js", "TanStack", "Node", "Python", "FastAPI", "PostgreSQL", "Tailwind", "Vite"]
+    },
+    {
+      "label": "Mobile & Automation",
+      "accent": "bg-blue text-white",
+      "lead": "Cross-platform apps and headless workflows that run themselves at 3am so I don't have to.",
+      "skills": ["Flutter", "Dart", "Firebase", "N8N", "Zapier", "GitHub Actions", "Docker", "Webhooks"]
+    },
+    {
+      "label": "Cloud & Infra",
+      "accent": "bg-foreground text-background",
+      "lead": "Deployed across Azure and a few others. Microsoft AI-102 certified — not just LARPing.",
+      "skills": ["Azure OpenAI", "Functions", "Cosmos DB", "Vercel", "Supabase", "Cloudflare", "S3"]
+    },
+    {
+      "label": "Design & Prototype",
+      "accent": "bg-foreground text-background",
+      "lead": "I can read a Figma file, but I'd rather build the prototype in code by lunchtime.",
+      "skills": ["Figma", "Framer Motion", "GSAP", "Lottie", "Storybook", "MDX"]
+    },
+    {
+      "label": "Currently Learning",
+      "accent": "bg-foreground text-background",
+      "lead": "What's on the workbench this quarter — half of these will end up on the next version.",
+      "skills": ["Rust", "Modal", "MCP", "Bun", "Effect", "SQLite-on-edge"]
+    }
+  ]
+}
