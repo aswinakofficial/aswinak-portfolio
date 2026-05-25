@@ -23,6 +23,9 @@ export const Route = createFileRoute('/blog/$slug')({
           slug: `blog/${post.slug}`,
           type: 'article',
         }),
+        { property: 'og:article:published_time', content: post.frontmatter.publishedAt },
+        { property: 'og:article:author', content: siteConfig.name },
+        { property: 'og:article:tag', content: post.frontmatter.tags.join(', ') },
       ],
       links: [buildCanonicalLink(`blog/${post.slug}`)],
       scripts: [
@@ -30,12 +33,15 @@ export const Route = createFileRoute('/blog/$slug')({
           type: 'application/ld+json',
           children: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'Article',
+            '@type': 'BlogPosting',
             headline: post.frontmatter.title,
             description: post.frontmatter.description,
-            author: { '@type': 'Person', name: siteConfig.name },
             datePublished: post.frontmatter.publishedAt,
+            dateModified: post.frontmatter.updatedAt ?? post.frontmatter.publishedAt,
             url: `${siteConfig.url}/blog/${post.slug}`,
+            about: post.frontmatter.tags.map((tag: string) => ({ '@type': 'Thing', name: tag })),
+            author: { '@type': 'Person', name: siteConfig.name, url: siteConfig.url },
+            publisher: { '@type': 'Person', name: siteConfig.name, url: siteConfig.url },
           }),
         },
         {

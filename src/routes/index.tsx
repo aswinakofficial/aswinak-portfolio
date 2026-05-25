@@ -26,6 +26,26 @@ export const Route = createFileRoute('/')({
           jobTitle: 'AI Engineer & Full-Stack Developer',
           url: siteConfig.url,
           sameAs: [siteConfig.links.github, siteConfig.links.linkedin],
+          hasCredential: {
+            '@type': 'EducationalOccupationalCredential',
+            name: 'Microsoft Certified: Azure AI Engineer Associate',
+            credentialCategory: 'professional certification',
+            recognizedBy: { '@type': 'Organization', name: 'Microsoft' },
+            url: 'https://learn.microsoft.com/en-us/certifications/azure-ai-engineer/',
+          },
+        }),
+      },
+      {
+        type: 'application/ld+json',
+        children: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: siteConfig.title,
+          url: siteConfig.url,
+          speakable: {
+            '@type': 'SpeakableSpecification',
+            cssSelector: ['h1', '.hero-tagline', '.hire-cta-headline'],
+          },
         }),
       },
     ],

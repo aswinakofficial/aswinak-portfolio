@@ -167,6 +167,26 @@ export default defineConfig({
         ],
       },
 
+      // ── FAQ ──────────────────────────────────────────────────
+      {
+        name: 'faq',
+        label: 'FAQ',
+        path: 'src/content/site',
+        match: { include: 'faq' },
+        format: 'json',
+        ui: { allowedActions: { create: false, delete: false } },
+        fields: [
+          {
+            type: 'object', name: 'faqs', label: 'FAQ Items', list: true,
+            ui: { itemProps: (item: { q?: string }) => ({ label: item.q ?? 'Question' }) },
+            fields: [
+              { type: 'string', name: 'q', label: 'Question', required: true },
+              { type: 'string', name: 'a', label: 'Answer',   required: true, ui: { component: 'textarea' } },
+            ],
+          },
+        ],
+      },
+
       // ── Certifications ───────────────────────────────────────
       {
         name: 'certifications',

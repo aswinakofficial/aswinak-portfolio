@@ -16,6 +16,20 @@ export const Route = createRootRoute({
       { property: 'og:site_name', content: siteConfig.title },
       { name: 'twitter:card', content: 'summary_large_image' },
     ],
+    scripts: [
+      {
+        type: 'application/ld+json',
+        children: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: siteConfig.title,
+          url: siteConfig.url,
+          description: siteConfig.description,
+          inLanguage: 'en',
+          author: { '@type': 'Person', name: siteConfig.name, url: siteConfig.url },
+        }),
+      },
+    ],
     links: [
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },

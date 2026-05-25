@@ -1,17 +1,22 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Link } from '@tanstack/react-router'
-import { Check } from 'lucide-react'
+import { Check, ChevronDown } from 'lucide-react'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { buildPageMeta, buildCanonicalLink, siteConfig } from '@/lib/seo'
+import { faqs } from '@/lib/siteContent'
+import { useState } from 'react'
 
 export const Route = createFileRoute('/services')({
   head: () => ({
-    meta: buildPageMeta({
-      title: 'Services',
-      description: 'AI engineering services — RAG systems, Agentic AI, LLM orchestration, and full-stack development.',
-      slug: 'services',
-    }),
+    meta: [
+      ...buildPageMeta({
+        title: 'Services',
+        description: 'AI engineering services — RAG systems, Agentic AI, LLM orchestration, and full-stack development.',
+        slug: 'services',
+      }),
+      { name: 'keywords', content: 'RAG system design, agentic AI workflows, LLM orchestration, AI engineering consulting, LangChain, N8N' },
+    ],
     links: [buildCanonicalLink('services')],
     scripts: [
       {
@@ -28,6 +33,18 @@ export const Route = createFileRoute('/services')({
             url: siteConfig.url,
           },
           serviceType: ['RAG System Design', 'Agentic AI Workflows', 'LLM Orchestration', 'Full-Stack Development'],
+        }),
+      },
+      {
+        type: 'application/ld+json',
+        children: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faqs.map((f) => ({
+            '@type': 'Question',
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a },
+          })),
         }),
       },
     ],
@@ -52,6 +69,25 @@ const services = [
     features: ['Modern React UI', 'FastAPI / Node.js backend', 'Azure deployment', 'CI/CD setup'],
   },
 ]
+
+function FaqItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className="border-b-2 border-border last:border-b-0">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between gap-4 py-4 text-left font-black text-base hover:text-secondary-foreground transition-colors"
+        aria-expanded={open}
+      >
+        <span>{q}</span>
+        <ChevronDown className={`h-4 w-4 flex-shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
+      </button>
+      {open && (
+        <p className="pb-4 text-sm text-muted-foreground leading-relaxed">{a}</p>
+      )}
+    </div>
+  )
+}
 
 function ServicesPage() {
   return (
@@ -88,6 +124,15 @@ function ServicesPage() {
           </Card>
         ))}
       </div>
+
+      <section className="mb-16">
+        <h2 className="text-2xl font-black mb-6 border-b-2 border-border pb-3">Frequently Asked Questions</h2>
+        <div className="border-2 border-border neo-shadow px-6">
+          {faqs.map((faq) => (
+            <FaqItem key={faq.q} q={faq.q} a={faq.a} />
+          ))}
+        </div>
+      </section>
     </div>
   )
 }

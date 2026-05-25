@@ -4,11 +4,14 @@ import { about } from '@/lib/siteContent'
 
 export const Route = createFileRoute('/about')({
   head: () => ({
-    meta: buildPageMeta({
-      title: 'About',
-      description: 'Learn more about Aswin AK — AI Engineer, Full-Stack Developer, and Azure AI-102 certified professional.',
-      slug: 'about',
-    }),
+    meta: [
+      ...buildPageMeta({
+        title: 'About',
+        description: 'Learn more about Aswin AK — AI Engineer, Full-Stack Developer, and Azure AI-102 certified professional.',
+        slug: 'about',
+      }),
+      { name: 'keywords', content: 'AI engineer, RAG engineer, LangChain developer, Azure AI-102, full-stack AI developer, Kerala India' },
+    ],
     links: [buildCanonicalLink('about')],
     scripts: [
       {
@@ -21,6 +24,13 @@ export const Route = createFileRoute('/about')({
           url: siteConfig.url,
           description: 'AI Engineer specializing in RAG pipelines, Agentic AI, and LLM orchestration. Azure AI-102 certified.',
           sameAs: [siteConfig.links.github, siteConfig.links.linkedin],
+          hasCredential: {
+            '@type': 'EducationalOccupationalCredential',
+            name: 'Microsoft Certified: Azure AI Engineer Associate',
+            credentialCategory: 'professional certification',
+            recognizedBy: { '@type': 'Organization', name: 'Microsoft' },
+            url: 'https://learn.microsoft.com/en-us/certifications/azure-ai-engineer/',
+          },
         }),
       },
     ],

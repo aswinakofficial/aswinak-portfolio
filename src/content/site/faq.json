@@ -1,0 +1,36 @@
+{
+  "faqs": [
+    {
+      "q": "What is RAG (Retrieval-Augmented Generation)?",
+      "a": "RAG is an AI architecture that combines a retrieval system with a large language model. Instead of relying solely on the LLM's training data, RAG pipelines fetch relevant documents from a vector database at query time and pass them as context to the model — dramatically reducing hallucinations and enabling accurate answers over proprietary data."
+    },
+    {
+      "q": "What is the difference between RAG and fine-tuning?",
+      "a": "RAG retrieves external knowledge at inference time — ideal for large, frequently updated datasets. Fine-tuning bakes knowledge into model weights at training time — better for a specific tone or format. For most enterprise use cases, RAG is faster to deploy, cheaper to maintain, and easier to audit."
+    },
+    {
+      "q": "How do you prevent LLM hallucinations in production?",
+      "a": "I use a layered approach: semantic chunking to preserve context boundaries, cross-encoder reranking to surface the most relevant passages, hallucination guard prompts, and automated evaluation frameworks that measure factual grounding before deploying to production."
+    },
+    {
+      "q": "How do you evaluate a RAG pipeline's quality?",
+      "a": "I measure context precision (are retrieved chunks relevant?), context recall (are all relevant chunks retrieved?), answer faithfulness (does the answer stay grounded in context?), and answer relevancy (does it address the question?). I use frameworks like RAGAS and custom evaluation scripts with a golden Q&A dataset."
+    },
+    {
+      "q": "What frameworks and tools do you use for AI engineering?",
+      "a": "My primary stack is LangChain and LangGraph for orchestration, Python for pipelines, FastAPI for APIs, and Azure OpenAI or Cohere for LLM inference. For vector storage I use Qdrant, Pinecone, or Azure AI Search depending on scale requirements. For automation workflows I use N8N."
+    },
+    {
+      "q": "What does an enterprise RAG project typically involve?",
+      "a": "A typical engagement covers document ingestion pipeline design, chunking strategy, embedding model selection, vector database setup, retrieval and reranking logic, LLM orchestration, evaluation harness, and a FastAPI layer for your application to query. Timeline is usually 4–12 weeks depending on data complexity."
+    },
+    {
+      "q": "Are you available for freelance or contract AI projects?",
+      "a": "Yes — I take on 2 retainer clients at a time plus occasional fixed-scope builds. Current availability is from July onwards. Get in touch at aswin@xpar.in to discuss your project."
+    },
+    {
+      "q": "What is your Azure AI-102 certification?",
+      "a": "The Microsoft Certified: Azure AI Engineer Associate (AI-102) validates skills in building, managing, and deploying AI solutions on Azure — including Azure OpenAI, Azure AI Search, Document Intelligence, and Computer Vision services. I completed it in 2024."
+    }
+  ]
+}
