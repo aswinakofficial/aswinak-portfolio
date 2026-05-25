@@ -52,13 +52,11 @@ function CategoryDropdown({
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="inline-flex items-center gap-3 px-5 py-3.5 border-[4px] font-black text-lg uppercase tracking-tight neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all min-w-[280px] justify-between"
-        style={{ background: '#FFFBF0', color: '#0A0A0A', borderColor: '#0A0A0A' }}
+        className="inline-flex items-center gap-3 px-5 py-3.5 border-[4px] border-foreground font-black text-lg uppercase tracking-tight neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all min-w-[280px] justify-between bg-card dark:bg-[#FFFBF0] text-foreground dark:text-[#0A0A0A]"
       >
         <span className="flex items-center gap-3">
           <span
-            className={`w-5 h-5 border-[3px] flex-shrink-0 ${CATEGORY_META[value].swatch}`}
-            style={{ borderColor: '#0A0A0A' }}
+            className={`w-5 h-5 border-[3px] border-foreground dark:border-[#0A0A0A] flex-shrink-0 ${CATEGORY_META[value].swatch}`}
           />
           <span className="flex flex-col items-start gap-0.5">
             <span className="font-mono text-[10px] font-semibold tracking-[0.12em] opacity-55 uppercase">Showing</span>
@@ -129,11 +127,10 @@ export function FeaturedProjects() {
 
   return (
     <section
-      className="border-t-[5px] border-b-[5px] border-border py-28"
-      style={{ background: '#0A0A0A', color: '#FFFBF0' }}
+      className="border-t-[5px] border-b-[5px] border-border py-28 bg-background text-foreground"
     >
       <div className="mx-auto max-w-[1280px] px-12">
-        <p className="font-mono text-xs font-semibold uppercase tracking-[0.1em] mb-4" style={{ color: '#aaa' }}>
+        <p className="font-mono text-xs font-semibold uppercase tracking-[0.1em] mb-4 text-muted-foreground">
           § 02 — Selected Work
         </p>
 
@@ -141,7 +138,7 @@ export function FeaturedProjects() {
           <div>
             <h2
               className="font-display font-black leading-none tracking-[-0.04em] mb-4"
-              style={{ fontSize: 'clamp(40px, 5vw, 56px)', color: '#FFFBF0' }}
+              style={{ fontSize: 'clamp(40px, 5vw, 56px)' }}
             >
               <span
                 className="inline-block w-14 h-[18px] border-[3px] border-background mr-3 align-middle"
@@ -149,7 +146,7 @@ export function FeaturedProjects() {
               />
               Featured projects.
             </h2>
-            <p className="font-mono text-sm font-semibold tracking-wide" style={{ color: '#bbb' }}>
+            <p className="font-mono text-sm font-semibold tracking-wide text-muted-foreground">
               {meta.blurb}
             </p>
           </div>
@@ -159,7 +156,7 @@ export function FeaturedProjects() {
             <Link
               to="/projects"
               className="font-mono text-xs font-semibold tracking-[0.08em] uppercase underline underline-offset-4"
-              style={{ color: '#888' }}
+              style={{ color: 'var(--muted-foreground)' }}
             >
               See all projects ↗
             </Link>
@@ -219,7 +216,7 @@ export function FeaturedProjects() {
           ))}
 
           {projects.length === 0 && (
-            <div className="col-span-3 py-16 text-center border-[4px] border-dashed border-background/30 font-display font-black text-xl" style={{ color: '#FFFBF0' }}>
+            <div className="col-span-3 py-16 text-center border-[4px] border-dashed border-foreground/30 font-display font-black text-xl">
               No projects in this category yet.
             </div>
           )}
