@@ -1,13 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Mail, Linkedin, Github } from 'lucide-react'
-import { ContactForm } from '@/components/contact/contact-form'
 import { buildPageMeta, buildCanonicalLink, siteConfig } from '@/lib/seo'
+import { footer as footerContent } from '@/lib/siteContent'
 
 export const Route = createFileRoute('/contact')({
   head: () => ({
     meta: buildPageMeta({
       title: 'Contact',
-      description: 'Get in touch with Aswin AK for AI engineering projects, freelance work, or collaboration.',
+      description: 'Get in touch with Aswin AK — AI engineer & full-stack developer open to new roles and opportunities.',
       slug: 'contact',
     }),
     links: [buildCanonicalLink('contact')],
@@ -16,52 +16,55 @@ export const Route = createFileRoute('/contact')({
 })
 
 function ContactPage() {
+  const contactEmail = footerContent.email || 'aswin@xpar.in'
+
   return (
-    <div className="container mx-auto max-w-5xl px-4 py-16">
+    <div className="container mx-auto max-w-3xl px-4 py-16 text-center">
       <div className="inline-block border-2 border-border bg-secondary text-secondary-foreground px-3 py-1 text-xs font-black uppercase tracking-widest mb-6 neo-shadow-sm">
         Contact
       </div>
-      <h1 className="text-5xl font-black mb-2 leading-tight">Get in touch</h1>
-      <p className="text-muted-foreground text-xl font-medium mb-12">
-        Open to freelance contracts, consulting, and collaboration.
+      <h1 className="text-5xl font-black mb-4 leading-tight">Get in touch</h1>
+      <p className="text-muted-foreground text-xl font-medium mb-12 max-w-xl mx-auto">
+        Looking for my next opportunity. Whether you're a recruiter or an engineering team, feel free to reach out directly through any of the channels below.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div>
-          <h2 className="text-xl font-black mb-6 border-b-2 border-border pb-3">Send a message</h2>
-          <ContactForm />
-        </div>
-
-        <div>
-          <h2 className="text-xl font-black mb-6 border-b-2 border-border pb-3">Other ways to reach me</h2>
-          <div className="space-y-3">
-            <a
-              href={`mailto:007aswinak007@gmail.com`}
-              className="flex items-center gap-3 border-2 border-border p-3 neo-shadow-sm hover:-translate-x-0.5 hover:-translate-y-0.5 hover:neo-shadow hover:bg-accent hover:text-accent-foreground transition-all font-medium"
-            >
-              <Mail className="h-5 w-5 flex-shrink-0" />
-              <span>007aswinak007@gmail.com</span>
-            </a>
-            <a
-              href={siteConfig.links.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 border-2 border-border p-3 neo-shadow-sm hover:-translate-x-0.5 hover:-translate-y-0.5 hover:neo-shadow hover:bg-accent hover:text-accent-foreground transition-all font-medium"
-            >
-              <Linkedin className="h-5 w-5 flex-shrink-0" />
-              <span>linkedin.com/in/aswinakofficial</span>
-            </a>
-            <a
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 border-2 border-border p-3 neo-shadow-sm hover:-translate-x-0.5 hover:-translate-y-0.5 hover:neo-shadow hover:bg-accent hover:text-accent-foreground transition-all font-medium"
-            >
-              <Github className="h-5 w-5 flex-shrink-0" />
-              <span>github.com/aswinakofficial</span>
-            </a>
+      <div className="max-w-md mx-auto space-y-4 text-left">
+        <a
+          href={`mailto:${contactEmail}`}
+          className="flex items-center gap-4 border-4 border-border p-4 bg-background neo-shadow hover:-translate-x-0.5 hover:-translate-y-0.5 hover:neo-shadow-lg hover:bg-orange hover:text-white transition-all font-black text-lg"
+        >
+          <Mail className="h-6 w-6 flex-shrink-0" strokeWidth={2.5} />
+          <div>
+            <div className="text-xs font-bold uppercase tracking-wider opacity-80 mb-0.5">Email Me</div>
+            <span>{contactEmail}</span>
           </div>
-        </div>
+        </a>
+
+        <a
+          href={siteConfig.links.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-4 border-4 border-border p-4 bg-background neo-shadow hover:-translate-x-0.5 hover:-translate-y-0.5 hover:neo-shadow-lg hover:bg-blue hover:text-white transition-all font-black text-lg"
+        >
+          <Linkedin className="h-6 w-6 flex-shrink-0" strokeWidth={2.5} />
+          <div>
+            <div className="text-xs font-bold uppercase tracking-wider opacity-80 mb-0.5">LinkedIn</div>
+            <span>linkedin.com/in/aswinakofficial</span>
+          </div>
+        </a>
+
+        <a
+          href={siteConfig.links.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-4 border-4 border-border p-4 bg-background neo-shadow hover:-translate-x-0.5 hover:-translate-y-0.5 hover:neo-shadow-lg hover:bg-foreground hover:text-background transition-all font-black text-lg"
+        >
+          <Github className="h-6 w-6 flex-shrink-0" strokeWidth={2.5} />
+          <div>
+            <div className="text-xs font-bold uppercase tracking-wider opacity-80 mb-0.5">GitHub</div>
+            <span>github.com/aswinakofficial</span>
+          </div>
+        </a>
       </div>
     </div>
   )

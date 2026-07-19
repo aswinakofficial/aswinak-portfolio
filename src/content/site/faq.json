@@ -22,11 +22,11 @@
     },
     {
       "q": "What does an enterprise RAG project typically involve?",
-      "a": "A typical engagement covers document ingestion pipeline design, chunking strategy, embedding model selection, vector database setup, retrieval and reranking logic, LLM orchestration, evaluation harness, and a FastAPI layer for your application to query. Timeline is usually 4–12 weeks depending on data complexity."
+      "a": "A typical project covers document ingestion pipeline design, chunking strategy, embedding model selection, vector database setup, retrieval and reranking logic, LLM orchestration, evaluation harness, and a FastAPI layer for the application to query. I've shipped systems like this end-to-end in production."
     },
     {
-      "q": "Are you available for freelance or contract AI projects?",
-      "a": "Yes — I take on 2 retainer clients at a time plus occasional fixed-scope builds. Current availability is from July onwards. Get in touch at aswin@xpar.in to discuss your project."
+      "q": "Are you open to new job opportunities?",
+      "a": "Yes — I'm actively exploring full-time roles. If you're hiring for roles at the intersection of AI, LLMs, and production-grade software engineering, reach out at aswin@xpar.in and let's have a conversation."
     },
     {
       "q": "What is your Azure AI-102 certification?",

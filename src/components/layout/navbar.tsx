@@ -49,7 +49,7 @@ export function Navbar() {
             to="/contact"
             className="hidden md:inline-flex items-center gap-2 px-4 py-2 text-sm font-black uppercase tracking-wide bg-orange text-white border-[3px] border-border neo-shadow-sm hover:translate-x-[-2px] hover:translate-y-[-2px] hover:neo-shadow transition-all"
           >
-            Hire Me
+            Work With Me
           </Link>
 
           {/* Mobile menu */}
@@ -77,7 +77,7 @@ export function Navbar() {
                   to="/contact"
                   className="mt-4 flex items-center justify-center px-4 py-3 text-sm font-black uppercase tracking-wide bg-orange text-white border-[3px] border-border neo-shadow-sm"
                 >
-                  Hire Me
+                  Work With Me
                 </Link>
               </nav>
             </SheetContent>
