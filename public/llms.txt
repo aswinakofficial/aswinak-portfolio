@@ -1,0 +1,26 @@
+# Aswin AK — AI Engineer & Full-Stack Developer
+
+AI Engineer specializing in RAG pipelines, Agentic AI, LLM orchestration, and full-stack development. Azure AI-102 certified.
+
+- URL: https://aswin.xpar.in
+- GitHub: https://github.com/aswinakofficial
+- LinkedIn: https://linkedin.com/in/aswinakofficial
+
+## About
+
+AI Engineer experienced in building enterprise semantic systems, RAG, agentic LLM flows, and full-stack applications.
+
+## Technical Skills
+
+- **AI/ML:** RAG Pipelines, LangChain, LlamaIndex, Databricks, LLMs, Vector Databases, Prompt Engineering.
+- **Languages:** TS/JS, Python, SQL, HTML/CSS.
+- **Frontend/Backend:** React, TanStack Start, Next.js, FastAPI, Node.js.
+- **Cloud:** Azure, AWS, Netlify.
+
+## Projects
+- [RexAI — Agentic Research Assistant](https://aswin.xpar.in/projects/rexai): Multi-agent research workflow that autonomously gathers, synthesises, and reports on complex topics.
+- [RAG Starter Kit](https://aswin.xpar.in/projects/rag-starter-kit): Open-source boilerplate for quickly bootstrapping production-grade RAG systems.
+- [Enterprise RAG System](https://aswin.xpar.in/projects/enterprise-rag): Production RAG pipeline indexing millions of unstructured documents for AI-assisted research.
+
+## Blog Posts
+- [How I built an enterprise RAG pipeline that indexes millions of documents](https://aswin.xpar.in/blog/how-i-built-rag-pipeline): A deep dive into building a production RAG system using Databricks, LangChain, and Azure — the architecture, the pitfalls, and what I learned. (Published: 2026-05-01)
