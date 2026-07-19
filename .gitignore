@@ -12,3 +12,6 @@ dist-ssr
 __unconfig*
 todos.json
 tina/__generated__
+
+# Local Netlify folder
+.netlify

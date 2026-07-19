@@ -110,7 +110,6 @@ export function Footer() {
         {/* Bottom strip */}
         <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2 pt-7 font-mono text-xs" style={{ opacity: 0.5 }}>
           <span>© {new Date().getFullYear()} {footerContent.copyright} · All rights reserved.</span>
-          <span>Built with {footerContent.builtWith}</span>
         </div>
       </div>
     </footer>
