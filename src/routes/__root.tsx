@@ -15,6 +15,12 @@ export const Route = createRootRoute({
       { name: 'author', content: siteConfig.name },
       { property: 'og:site_name', content: siteConfig.title },
       { name: 'twitter:card', content: 'summary_large_image' },
+      ...(import.meta.env.VITE_GOOGLE_SITE_VERIFICATION
+        ? [{ name: 'google-site-verification', content: import.meta.env.VITE_GOOGLE_SITE_VERIFICATION }]
+        : []),
+      ...(import.meta.env.VITE_BING_SITE_VERIFICATION
+        ? [{ name: 'msvalidate.01', content: import.meta.env.VITE_BING_SITE_VERIFICATION }]
+        : []),
     ],
     scripts: [
       {
