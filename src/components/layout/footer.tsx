@@ -89,7 +89,7 @@ export function Footer() {
             <h4 className="text-xs font-black uppercase tracking-[0.12em] mb-4" style={{ color: '#FFE500' }}>Contact</h4>
             {[
               { label: footerContent.email, href: `mailto:${footerContent.email}` },
-              { label: 'Resume.pdf ↗', href: '/cv.pdf' },
+              { label: 'Resume ↗', href: '/resume' },
             ].map((l) => (
               <a key={l.href} href={l.href} className="block text-sm font-medium py-1 transition-colors" style={{ opacity: 0.8 }}
                 onMouseEnter={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.color = '#FF5C00' }}
