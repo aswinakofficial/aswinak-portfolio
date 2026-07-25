@@ -2,7 +2,7 @@ import { writeFileSync, readFileSync } from 'fs'
 import { glob } from 'glob'
 
 const BASE_URL = 'https://aswin.xpar.in'
-const STATIC_ROUTES = ['/', '/about', '/projects', '/blog', '/services', '/contact']
+const STATIC_ROUTES = ['/', '/about', '/projects', '/blog', '/services', '/contact', '/resume']
 
 // Parse MDX frontmatter
 function parseMDX(filePath: string) {

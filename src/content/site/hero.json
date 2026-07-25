@@ -1,7 +1,7 @@
 {
   "name": "Aswin",
   "tagline": "— I design and ship clean, scalable applications to meet any requirement—ranging from production-grade AI/RAG systems to robust, high-performance web and mobile platforms.",
-  "certBadge": "Azure AI-102 Certified",
+  "certBadge": "AI Engineer@EY",
   "location": "Kerala, India · UTC+5:30",
   "stickerAvailability": "Open to new opportunities",
   "stickerCurrent": "Shipping Prepora",
@@ -31,7 +31,7 @@
       "color": "bg-card text-foreground"
     },
     {
-      "label": "Flutter",
+      "label": ".NET",
       "color": "bg-card text-foreground"
     },
     {
