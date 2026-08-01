@@ -112,8 +112,12 @@ export function Hero() {
             {/* Inner container to clip the photo cutout to the frame bounds */}
             <div className="w-full h-full overflow-hidden flex items-end justify-center">
               <img
-                src="/aswin.png"
+                src="/aswin.webp"
                 alt="Aswin AK"
+                width={447}
+                height={558}
+                fetchPriority="high"
+                decoding="async"
                 className="max-h-full max-w-full object-contain object-bottom select-none pointer-events-none"
               />
             </div>
