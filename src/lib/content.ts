@@ -1,11 +1,22 @@
 import type { Post, PostFrontmatter } from '@/types/post'
+import type { Project, ProjectFrontmatter } from '@/types/project'
 
 function calcReadingTime(text: string): string {
   const words = text.trim().split(/\s+/).filter(Boolean).length
   const minutes = Math.max(1, Math.round(words / 200))
   return `${minutes} min read`
 }
-import type { Project, ProjectFrontmatter } from '@/types/project'
+
+function formatReadingTime(customReadingTime?: string, rawContent?: string): string {
+  if (customReadingTime && customReadingTime.trim()) {
+    const trimmed = customReadingTime.trim()
+    if (/^\d+$/.test(trimmed)) {
+      return `${trimmed} min read`
+    }
+    return trimmed
+  }
+  return calcReadingTime(rawContent || '')
+}
 
 // Eager glob — MDX files bundled at build time, available as a keyed record
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -24,10 +35,11 @@ export function getAllPosts(): PostMeta[] {
     .map(([path, module]) => {
       const slug = path.split('/').pop()?.replace('.mdx', '') ?? ''
       const rawContent = typeof module.rawContent === 'string' ? module.rawContent : ''
+      const frontmatter = module.frontmatter as PostFrontmatter
       return {
         slug,
-        frontmatter: module.frontmatter as PostFrontmatter,
-        readingTime: calcReadingTime(rawContent),
+        frontmatter,
+        readingTime: formatReadingTime(frontmatter?.readingTime, rawContent),
       }
     })
     .filter((p) => p.frontmatter?.publishedAt)
@@ -40,6 +52,12 @@ export function getAllPosts(): PostMeta[] {
 
 export function getPostBySlug(slug: string): PostMeta | null {
   return getAllPosts().find((p) => p.slug === slug) ?? null
+}
+
+export function getPostsByCategory(category: string): PostMeta[] {
+  const posts = getAllPosts()
+  if (!category || category === 'All') return posts
+  return posts.filter((p) => (p.frontmatter.category || 'Tech').toLowerCase() === category.toLowerCase())
 }
 
 export function getAllProjects(): ProjectMeta[] {

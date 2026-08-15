@@ -2,7 +2,9 @@ import { createFileRoute, notFound } from '@tanstack/react-router'
 import { Clock } from 'lucide-react'
 import { getPostBySlug, getPostModule } from '@/lib/content'
 import { MdxComponents } from '@/components/blog/mdx-components'
+import { MemoryLane, StickyMemoryLaneColumn, MobileMemoryLaneOverlay } from '@/components/blog/memory-lane'
 import { ReadingProgress } from '@/components/blog/reading-progress'
+import { ScrollToTopBottomButton } from '@/components/blog/scroll-nav-button'
 import { buildPageMeta, buildCanonicalLink, siteConfig } from '@/lib/seo'
 import { formatDate } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
@@ -15,17 +17,27 @@ export const Route = createFileRoute('/blog/$slug')({
   },
   head: ({ loaderData: post }) => {
     if (!post) return {}
+
+    const minutesMatch = post.readingTime?.match(/\d+/)
+    const minutes = minutesMatch ? parseInt(minutesMatch[0], 10) : null
+    const timeRequiredISO = minutes ? `PT${minutes}M` : undefined
+    const heroImage = post.frontmatter.photos?.[0]?.src
+      ? `${siteConfig.url}${post.frontmatter.photos[0].src}`
+      : undefined
+
     return {
       meta: [
         ...buildPageMeta({
           title: post.frontmatter.title,
           description: post.frontmatter.description,
           slug: `blog/${post.slug}`,
+          image: heroImage,
           type: 'article',
         }),
         { property: 'og:article:published_time', content: post.frontmatter.publishedAt },
         { property: 'og:article:author', content: siteConfig.name },
         { property: 'og:article:tag', content: post.frontmatter.tags.join(', ') },
+        ...(post.frontmatter.category ? [{ property: 'og:article:section', content: post.frontmatter.category }] : []),
       ],
       links: [buildCanonicalLink(`blog/${post.slug}`)],
       scripts: [
@@ -39,6 +51,10 @@ export const Route = createFileRoute('/blog/$slug')({
             datePublished: post.frontmatter.publishedAt,
             dateModified: post.frontmatter.updatedAt ?? post.frontmatter.publishedAt,
             url: `${siteConfig.url}/blog/${post.slug}`,
+            ...(timeRequiredISO && { timeRequired: timeRequiredISO }),
+            ...(post.frontmatter.category && { articleSection: post.frontmatter.category }),
+            keywords: post.frontmatter.tags.join(', '),
+            ...(heroImage && { image: [heroImage] }),
             about: post.frontmatter.tags.map((tag: string) => ({ '@type': 'Thing', name: tag })),
             author: { '@type': 'Person', name: siteConfig.name, url: siteConfig.url },
             publisher: { '@type': 'Person', name: siteConfig.name, url: siteConfig.url },
@@ -73,9 +89,20 @@ function BlogPostPage() {
   const module = getPostModule(post.slug)
   const PostContent = module?.default
 
+  const photos = (post.frontmatter.photos || []).map((photo, i) => ({
+    ...photo,
+    originalIndex: i,
+  }))
+  const hasPhotos = photos.length > 0
+
+  // Distribute photos between left and right sidebars to create a Z-pattern
+  const leftPhotos = photos.filter((_, i) => i % 2 === 0)
+  const rightPhotos = photos.filter((_, i) => i % 2 === 1)
+
   return (
     <>
       <ReadingProgress />
+      <ScrollToTopBottomButton />
       <article>
         {/* Header */}
         <div className="border-b-[5px] border-border px-4 sm:px-8 md:px-12 pt-10 pb-10 md:pt-16 md:pb-16 brut-dotgrid">
@@ -84,10 +111,13 @@ function BlogPostPage() {
             <div className="flex items-center gap-3 font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-7">
               <a href="/blog" className="hover:text-foreground transition-colors">← Blog</a>
               <span className="opacity-40">/</span>
-              <span>Engineering</span>
+              <span className="font-bold text-foreground">{post.frontmatter.category || 'Tech'}</span>
             </div>
 
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="flex flex-wrap items-center gap-2 mb-8">
+              <Badge className={post.frontmatter.category === 'Travel' ? 'bg-orange text-white' : 'bg-blue text-white'}>
+                {post.frontmatter.category || 'Tech'}
+              </Badge>
               {post.frontmatter.tags.map((tag) => (
                 <Badge key={tag} variant="secondary">{tag}</Badge>
               ))}
@@ -115,7 +145,7 @@ function BlogPostPage() {
                 </div>
                 <div>
                   <div className="font-black text-sm">Aswin AK</div>
-                  <div className="font-mono text-xs text-muted-foreground font-medium">AI Engineer · @aswin</div>
+                  <div className="font-mono text-xs text-muted-foreground font-medium">AI Engineer @ EY</div>
                 </div>
               </div>
 
@@ -131,10 +161,34 @@ function BlogPostPage() {
           </div>
         </div>
 
-        {/* MDX content */}
-        <div className="mx-auto max-w-[880px] px-6 py-16">
-          <div className="prose prose-neutral dark:prose-invert max-w-none">
-            {PostContent ? <PostContent components={MdxComponents} /> : <p>Content not found.</p>}
+        {/* MDX Content + Dual Margin Memory Lane Layout */}
+        <div className="mx-auto max-w-[1720px] px-4 sm:px-6 lg:px-8 2xl:px-12 py-16">
+          <div className={hasPhotos ? 'flex flex-col xl:flex-row gap-8 2xl:gap-12 3xl:gap-16 items-start justify-between' : 'mx-auto max-w-[840px]'}>
+
+            {/* LEFT Sticky Memory Lane Column (Desktop) */}
+            {hasPhotos && leftPhotos.length > 0 && (
+              <StickyMemoryLaneColumn className="hidden xl:block w-[240px] 2xl:w-[280px] 3xl:w-[320px] flex-shrink-0">
+                <MemoryLane photos={leftPhotos} side="left" />
+              </StickyMemoryLaneColumn>
+            )}
+
+            {/* Main Article Content */}
+            <div className="w-full max-w-[820px] 2xl:max-w-[860px] flex-1 min-w-0 mx-auto">
+              <div className="prose prose-neutral dark:prose-invert max-w-none">
+                {PostContent ? <PostContent components={MdxComponents} /> : <p>Content not found.</p>}
+              </div>
+
+              {/* Mobile Memory Lane Trigger & Overlay */}
+              {hasPhotos && <MobileMemoryLaneOverlay photos={photos} />}
+            </div>
+
+            {/* RIGHT Sticky Memory Lane Column (Desktop) */}
+            {hasPhotos && rightPhotos.length > 0 && (
+              <StickyMemoryLaneColumn className="hidden xl:block w-[240px] 2xl:w-[280px] 3xl:w-[320px] flex-shrink-0">
+                <MemoryLane photos={rightPhotos} side="right" />
+              </StickyMemoryLaneColumn>
+            )}
+
           </div>
         </div>
       </article>
