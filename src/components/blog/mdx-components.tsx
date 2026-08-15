@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef } from 'react'
+import { BlogImage } from '@/components/blog/blog-image'
 
 type HeadingProps = ComponentPropsWithoutRef<'h1'>
 type ParagraphProps = ComponentPropsWithoutRef<'p'>
@@ -12,6 +13,7 @@ type ImgProps = ComponentPropsWithoutRef<'img'>
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const MdxComponents: Record<string, any> = {
+  BlogImage,
   h1: ({ children, ...props }: HeadingProps) => (
     <h1 className="font-display font-black text-3xl mt-10 mb-4 tracking-tight" {...props}>{children}</h1>
   ),
@@ -65,13 +67,40 @@ export const MdxComponents: Record<string, any> = {
       {children}
     </blockquote>
   ),
-  img: ({ alt, src, ...props }: ImgProps) => (
-    <img
-      alt={alt ?? ''}
-      src={src}
-      loading="lazy"
-      className="my-6 max-w-full border-[4px] border-border neo-shadow"
-      {...props}
-    />
+  img: ({ alt, src }: ImgProps) => {
+    if (!src) return null
+    return <BlogImage src={src} alt={alt} caption={alt} />
+  },
+  table: ({ children, ...props }: ComponentPropsWithoutRef<'table'>) => (
+    <div className="my-6 w-full overflow-x-auto border-[3px] border-border neo-shadow-sm">
+      <table className="w-full text-left border-collapse text-sm" {...props}>
+        {children}
+      </table>
+    </div>
+  ),
+  thead: ({ children, ...props }: ComponentPropsWithoutRef<'thead'>) => (
+    <thead className="bg-secondary text-secondary-foreground font-black border-b-[3px] border-border uppercase tracking-wider" {...props}>
+      {children}
+    </thead>
+  ),
+  tbody: ({ children, ...props }: ComponentPropsWithoutRef<'tbody'>) => (
+    <tbody className="divide-y-[2px] divide-border font-medium" {...props}>
+      {children}
+    </tbody>
+  ),
+  tr: ({ children, ...props }: ComponentPropsWithoutRef<'tr'>) => (
+    <tr className="hover:bg-muted/50 transition-colors" {...props}>
+      {children}
+    </tr>
+  ),
+  th: ({ children, ...props }: ComponentPropsWithoutRef<'th'>) => (
+    <th className="p-3 border-r-[2px] border-border last:border-r-0 font-bold" {...props}>
+      {children}
+    </th>
+  ),
+  td: ({ children, ...props }: ComponentPropsWithoutRef<'td'>) => (
+    <td className="p-3 border-r-[2px] border-border last:border-r-0" {...props}>
+      {children}
+    </td>
   ),
 }

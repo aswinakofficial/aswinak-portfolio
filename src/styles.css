@@ -247,3 +247,34 @@
   line-height: 1.45;
   letter-spacing: -0.01em;
 }
+
+/* ── Memory Lane Wind Animations ── */
+@keyframes memoryWindSway {
+  0% {
+    transform: rotate(var(--sway-min, -4deg));
+  }
+  50% {
+    transform: rotate(var(--sway-max, 4deg));
+  }
+  100% {
+    transform: rotate(var(--sway-min, -4deg));
+  }
+}
+
+@keyframes connectorWaveSway {
+  0% {
+    transform: translateX(-50%) skewX(-0.8deg);
+    stroke-dashoffset: 0;
+  }
+  50% {
+    transform: translateX(calc(-50% + 2.5px)) skewX(0.8deg);
+    stroke-dashoffset: 28;
+  }
+  100% {
+    transform: translateX(-50%) skewX(-0.8deg);
+    stroke-dashoffset: 56;
+  }
+}
+
+
+

@@ -2,67 +2,73 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aswin.xpar.in/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://aswin.xpar.in/about</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aswin.xpar.in/projects</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aswin.xpar.in/blog</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aswin.xpar.in/services</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aswin.xpar.in/contact</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aswin.xpar.in/resume</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aswin.xpar.in/blog/kudremukh-trek-from-kerala</loc>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aswin.xpar.in/blog/how-i-built-rag-pipeline</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aswin.xpar.in/projects/rexai</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aswin.xpar.in/projects/rag-starter-kit</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aswin.xpar.in/projects/enterprise-rag</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

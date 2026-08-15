@@ -1,119 +1,57 @@
-# Aswin AK — AI Engineer & Full-Stack Developer
-
-AI Engineer specializing in RAG pipelines, Agentic AI, LLM orchestration, and full-stack development. Azure AI-102 certified.
-
-- URL: https://aswin.xpar.in
-- GitHub: https://github.com/aswinakofficial
-- LinkedIn: https://linkedin.com/in/aswinakofficial
-
-## About
-
-AI Engineer experienced in building enterprise semantic systems, RAG, agentic LLM flows, and full-stack applications.
-
-## Technical Skills
-
-- **AI/ML:** RAG Pipelines, LangChain, LlamaIndex, Databricks, LLMs, Vector Databases, Prompt Engineering.
-- **Languages:** TS/JS, Python, SQL, HTML/CSS.
-- **Frontend/Backend:** React, TanStack Start, Next.js, FastAPI, Node.js.
-- **Cloud:** Azure, AWS, Netlify.
-
-## Projects
-- [RexAI — Agentic Research Assistant](https://aswin.xpar.in/projects/rexai): Multi-agent research workflow that autonomously gathers, synthesises, and reports on complex topics.
-- [RAG Starter Kit](https://aswin.xpar.in/projects/rag-starter-kit): Open-source boilerplate for quickly bootstrapping production-grade RAG systems.
-- [Enterprise RAG System](https://aswin.xpar.in/projects/enterprise-rag): Production RAG pipeline indexing millions of unstructured documents for AI-assisted research.
-
-## Blog Posts
-- [From Kerala to Kudremukh: When Our Backup Plan Became the Best Part of the Trip](https://aswin.xpar.in/blog/kudremukh-trek-from-kerala): A complete personal account of  Kudremukh trek in Karnataka — from cancelled Netravati plan to a 240 km scooter ride and 22 km trek. (Published: 2026-08-14T00:00:00.000Z)
-- [How I built an enterprise RAG pipeline that indexes millions of documents](https://aswin.xpar.in/blog/how-i-built-rag-pipeline): A deep dive into building a production RAG system using Databricks, LangChain, and Azure — the architecture, the pitfalls, and what I learned. (Published: 2026-05-01)
-
-
 ---
-
-## Full Details of Projects & Articles
-
-### Project: RexAI — Agentic Research Assistant
-- **URL**: https://aswin.xpar.in/projects/rexai
-- **Description**: Multi-agent research workflow that autonomously gathers, synthesises, and reports on complex topics.
-- **Tags**: LangChain, N8N, FastAPI, Python, React
-
-## Overview
-
-RexAI is a multi-agent system designed to automate research workflows. Given a topic or question, it autonomously:
-
-1. Searches multiple sources (web, internal docs, databases)
-2. Synthesises findings using a planning LLM
-3. Drafts a structured report with citations
-4. Routes for human review when confidence is low
-
-## Architecture
-
-- **Orchestrator agent** built with LangChain + custom tool registry
-- **N8N workflows** for data collection and notification pipelines
-- **FastAPI backend** with async task queue
-- **React frontend** with real-time progress streaming
-
-## Technical highlights
-
-- Custom tool-calling framework with retry logic and rate limiting
-- Human-in-the-loop interrupts for low-confidence decisions
-- Streaming SSE responses for live progress feedback
-
+title: 'From Kerala to Kudremukh: When Our Backup Plan Became the Best Part of the Trip'
+description: A complete personal account of  Kudremukh trek in Karnataka — from cancelled Netravati plan to a 240 km scooter ride and 22 km trek.
+publishedAt: 2026-08-14T00:00:00.000Z
+updatedAt: 2026-08-16T17:14:20.260Z
+category: Travel
+tags:
+  - Trekking
+  - Kudremukh
+  - Kerala
+  - Karnataka
+  - Road Trip
+slug: kudremukh-trek-from-kerala
+readingTime: '5'
+photos:
+  - src: /images/blog/kudremukh/1.jpg
+    caption: "headstart with a smile \U0001F600"
+    location: ''
+    date: ''
+    rotation: '-3deg'
+    tapeColor: purple
+  - src: /images/blog/kudremukh/2.jpg
+    caption: "Into the forest \U0001F43B \U0001F332 \U0001F98C"
+    location: ''
+    date: ''
+    rotation: 2.5deg
+    tapeColor: orange
+  - src: /images/blog/kudremukh/3.jpg
+    caption: 'A pitstop to rest, fill water'
+    location: ''
+    date: ''
+    rotation: '-2deg'
+    tapeColor: blue
+  - src: /images/blog/kudremukh/7.jpg
+    caption: midway meadows
+  - src: /images/blog/kudremukh/4.jpg
+    caption: lush green shola forests
+    location: Kudremukh National Park
+    date: June 2026
+    rotation: 3deg
+    tapeColor: purple
+  - src: /images/blog/kudremukh/5.jpg
+    caption: Hurray!
+    location: 'Kudremukh Peak (1,892m)'
+    date: August 2026
+    rotation: '-2.5deg'
+    tapeColor: orange
+  - src: /images/blog/kudremukh/6.jpg
+    caption: Back to base
+    location: ''
+    date: ''
+    rotation: 2.5deg
+    tapeColor: blue
 ---
-
-### Project: RAG Starter Kit
-- **URL**: https://aswin.xpar.in/projects/rag-starter-kit
-- **Description**: Open-source boilerplate for quickly bootstrapping production-grade RAG systems.
-- **Tags**: Python, LangChain, Docker, FastAPI, Qdrant
-
-## Overview
-
-A batteries-included starter kit for building RAG systems without the boilerplate. Includes ingestion, retrieval, evaluation, and a simple chat UI out of the box.
-
-## What's included
-
-- **Ingestion pipeline** with chunking strategies and metadata extraction
-- **Vector store** integration (Qdrant by default, swappable)
-- **FastAPI backend** with OpenAI-compatible `/chat` endpoint
-- **Evaluation harness** using RAGAs metrics
-- **Docker Compose** for local development
-- **GitHub Actions** CI pipeline
-
-## Getting started
-
-Clone the repo and run `docker compose up`. The ingestion pipeline, vector store, and API are ready in under a minute.
-
----
-
-### Project: Enterprise RAG System
-- **URL**: https://aswin.xpar.in/projects/enterprise-rag
-- **Description**: Production RAG pipeline indexing millions of unstructured documents for AI-assisted research.
-- **Tags**: Databricks, LangChain, Python, Azure, FastAPI
-
-## The challenge
-
-The team needed to make millions of unstructured tax and legal documents searchable by an AI assistant that could provide accurate, grounded answers with citations.
-
-## Solution
-
-Built an end-to-end RAG pipeline on Azure and Databricks:
-
-- **Ingestion**: Document pipeline with semantic chunking, metadata enrichment, and incremental indexing
-- **Retrieval**: Hybrid dense + sparse search with cross-encoder reranking
-- **Generation**: LangChain orchestration with hallucination guards and citation tracking
-- **API**: FastAPI service with streaming responses
-
-## Outcomes
-
-- Indexed 2M+ documents with sub-second retrieval latency
-- 85% reduction in research time for subject-matter experts
-- Hallucination rate below 2% on internal benchmarks
-
----
-
-### Blog: From Kerala to Kudremukh: When Our Backup Plan Became the Best Part of the Trip
-- **URL**: https://aswin.xpar.in/blog/kudremukh-trek-from-kerala
-- **Date**: 2026-08-14T00:00:00.000Z
-- **Tags**: 
 
 # Some trips begin with a carefully planned itinerary.
 
@@ -462,44 +400,3 @@ I'm planning to document more of my self-planned trips, trekking experiences and
 I'll also share future trips and updates on Instagram Stories.
 
 **Follow me on Instagram and stay around for the next journey.**
-
----
-
-### Blog: How I built an enterprise RAG pipeline that indexes millions of documents
-- **URL**: https://aswin.xpar.in/blog/how-i-built-rag-pipeline
-- **Date**: 2026-05-01
-- **Tags**: RAG, LangChain, Databricks, Azure, Python
-
-## The problem
-
-Most teams building RAG systems hit the same wall: a proof-of-concept that works great on 100 documents completely falls apart at a million.
-
-In this post I'll walk through the architecture we built to index millions of unstructured documents and serve accurate, grounded answers at production latency.
-
-## Architecture overview
-
-The pipeline has three main stages:
-
-1. **Ingestion** — Documents arrive via blob storage events and are chunked, enriched with metadata, and pushed to a vector index
-2. **Retrieval** — Hybrid search (dense + sparse) with cross-encoder reranking
-3. **Generation** — LLM call with grounded context, citations, and hallucination guards
-
-## Key learnings
-
-### Chunking strategy matters more than the embedding model
-
-We spent weeks tuning embedding models before realising our chunking was the bottleneck. Semantic chunking with a 50-token overlap beat fixed-size chunking by 18 points on our eval set.
-
-### Reranking is non-negotiable at scale
-
-First-pass retrieval is noisy. A cross-encoder reranker reduced false-positive context inclusion by 40%, which directly translated to fewer hallucinations.
-
-### Build an eval harness before optimising anything
-
-You can't optimise what you can't measure. We built a simple RAGAs-compatible eval harness from day one and it saved us from several "improvements" that actually made things worse.
-
-## What's next
-
-In the next post I'll go deeper on the evaluation framework and how we track quality regressions across deployments.
-
----

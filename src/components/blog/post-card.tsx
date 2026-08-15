@@ -3,27 +3,26 @@ import { Clock, ArrowUpRight } from 'lucide-react'
 import { formatDate } from '@/lib/utils'
 import type { Post } from '@/types/post'
 
-const TAG_COLORS: Record<string, string> = {
-  RAG: 'bg-orange text-white',
-  Agents: 'bg-blue text-white',
-  LangChain: 'bg-orange text-white',
-  LangGraph: 'bg-blue text-white',
-  Career: 'bg-secondary text-secondary-foreground',
-  Notes: 'bg-secondary text-secondary-foreground',
+const CATEGORY_COLORS: Record<string, string> = {
+  Tech: 'bg-blue text-white',
+  Travel: 'bg-orange text-white',
 }
 
 export function PostCard({ post }: { post: Post }) {
-  const primaryTag = post.frontmatter.tags[0]
-  const tagColor = TAG_COLORS[primaryTag] ?? 'bg-card text-foreground'
+  const category = post.frontmatter.category || 'Tech'
+  const categoryColor = CATEGORY_COLORS[category] ?? 'bg-primary text-primary-foreground'
 
   return (
     <article className="border-[4px] border-border bg-card neo-shadow p-6 flex flex-col gap-4 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:neo-shadow-lg transition-all">
-      {/* Tags */}
-      <div className="flex flex-wrap gap-2">
-        {post.frontmatter.tags.slice(0, 2).map((tag, i) => (
+      {/* Category & Tags */}
+      <div className="flex flex-wrap items-center gap-2">
+        <span className={`inline-flex items-center border-[2.5px] border-border px-2.5 py-0.5 text-xs font-black uppercase tracking-wider ${categoryColor}`}>
+          {category}
+        </span>
+        {post.frontmatter.tags.slice(0, 2).map((tag) => (
           <span
             key={tag}
-            className={`inline-flex items-center border-[2.5px] border-border px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide ${i === 0 ? tagColor : 'bg-background text-foreground'}`}
+            className="inline-flex items-center border-[2.5px] border-border px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide bg-background text-foreground"
           >
             {tag}
           </span>
