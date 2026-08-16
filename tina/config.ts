@@ -43,6 +43,24 @@ export default defineConfig({
           { type: 'string',    name: 'tags',         label: 'Tags',         list: true },
           { type: 'string',    name: 'slug',         label: 'Slug',         required: true },
           {
+            type: 'boolean',
+            name: 'isExternal',
+            label: 'Is External Article?',
+            description: 'Enable if this post is published on an external platform like Medium or Hackster.io.',
+          },
+          {
+            type: 'string',
+            name: 'externalUrl',
+            label: 'External Article URL',
+            description: 'Direct link to the original article (e.g. https://medium.com/@...)',
+          },
+          {
+            type: 'string',
+            name: 'platform',
+            label: 'Platform Name',
+            description: 'Name of the platform (e.g. Medium, Hackster.io, Dev.to, Substack)',
+          },
+          {
             type: 'string',
             name: 'readingTime',
             label: 'Reading Time',

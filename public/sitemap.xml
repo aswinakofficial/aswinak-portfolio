@@ -43,6 +43,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aswin.xpar.in/blog/medium-building-llm-agents</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aswin.xpar.in/blog/kudremukh-trek-from-kerala</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -50,6 +56,12 @@
   </url>
   <url>
     <loc>https://aswin.xpar.in/blog/how-i-built-rag-pipeline</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aswin.xpar.in/blog/hackster-tinyml-computer-vision</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
