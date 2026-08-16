@@ -1,6 +1,8 @@
 <!-- intent-skills:start -->
 # Skill mappings - load `use` with `pnpm dlx @tanstack/intent@latest load <use>`.
 skills:
+  - when: "Edit, review, structure, format, or optimize travel blog posts, personal travel accounts, MDX stories, Memory Lane photo collages, and itinerary recommendations."
+    use: ".agents/agents/travel-blog-editor/agent.md"
   - when: "Install TanStack Devtools, pick framework adapter (React/Vue/Solid/Preact), register plugins via plugins prop, configure shell (position, hotkeys, theme, hideUntilHover, requireUrlFlag, eventBusConfig). TanStackDevtools component, defaultOpen, localStorage persistence."
     use: "@tanstack/devtools#devtools-app-setup"
   - when: "Publish plugin to npm and submit to TanStack Devtools Marketplace. PluginMetadata registry format, plugin-registry.ts, pluginImport (importName, type), requires (packageName, minVersion), framework tagging, multi-framework submissions, featured plugins."

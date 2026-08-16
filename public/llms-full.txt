@@ -23,7 +23,7 @@ AI Engineer experienced in building enterprise semantic systems, RAG, agentic LL
 - [Enterprise RAG System](https://aswin.xpar.in/projects/enterprise-rag): Production RAG pipeline indexing millions of unstructured documents for AI-assisted research.
 
 ## Blog Posts
-- [From Kerala to Kudremukh: When Our Backup Plan Became the Best Part of the Trip](https://aswin.xpar.in/blog/kudremukh-trek-from-kerala): A complete personal account of  Kudremukh trek in Karnataka — from cancelled Netravati plan to a 240 km scooter ride and 22 km trek. (Published: 2026-08-14T00:00:00.000Z)
+- [From Kerala to Kudremukh: When Our Backup Plan Became the Best Part of the Trip](https://aswin.xpar.in/blog/kudremukh-trek-from-kerala): A complete personal account of the Kudremukh trek in Karnataka — from a cancelled Netravati plan to a 240 km scooter ride and 22 km trek. (Published: 2026-08-14T00:00:00.000Z)
 - [How I built an enterprise RAG pipeline that indexes millions of documents](https://aswin.xpar.in/blog/how-i-built-rag-pipeline): A deep dive into building a production RAG system using Databricks, LangChain, and Azure — the architecture, the pitfalls, and what I learned. (Published: 2026-05-01)
 
 
@@ -115,353 +115,153 @@ Built an end-to-end RAG pipeline on Azure and Databricks:
 - **Date**: 2026-08-14T00:00:00.000Z
 - **Tags**: 
 
-# Some trips begin with a carefully planned itinerary.
+Some trips begin with a carefully planned itinerary. Ours began with one trek, ended up becoming another, involved a 240 km scooter ride, and somehow still worked out better than expected.
 
-Ours began with one trek, ended up becoming another, involved a 240 km scooter ride, and somehow still worked out.
+We had originally planned to trek **Netravati Peak in Karnataka**. The plan was straightforward: travel overnight from Kerala to Mangalore by train, head to the base camp, and use public transport for the rest of the journey. But just before we left, Netravati was abruptly closed due to administrative issues. 
 
-We had originally planned to trek **Netravati Peak in Karnataka**. The plan was to travel from Kerala to Mangalore by train, stay near the base camp and use public transport for the rest of the journey.
-
-Then, just before the trip, Netravati was closed because of administrative issues.
-
-So we changed the plan.
-
-And that's how we ended up doing the **Kudremukh trek from Kerala**.
-
-Looking back, the unexpected change probably made the trip more memorable.
+That sudden closure forced a last-minute pivot—and that is how we ended up doing the **Kudremukh trek from Kerala**. Looking back, the unexpected change is what made the trip memorable.
 
 ***
 
 ## The Booking Problem
 
-Our initial idea was to plan the trip ourselves and keep the cost low.
-
-For Karnataka forest treks, the usual approach is to book a trek slot through the official online system. We knew the slots opened in advance, so I was ready to book as soon as our date became available.
+Our initial goal was to organize the trip independently and keep expenses to a minimum. For forest treks in Karnataka, permits are typically booked through the official online forest department portal. Knowing slots opened in advance, I was at my screen the moment our date went live.
 
 It didn't go well.
 
-The booking window opened, and the website became almost impossible to access. I kept trying for the first couple of minutes, and when I finally got through, there were no slots left.
+The website buckled under heavy traffic almost instantly. I refreshed repeatedly during the first few minutes, but by the time the page finally rendered, every single slot was gone. They had vanished within seconds. I even experimented with automating the form-filling process to save precious seconds, but automation couldn't overcome a site crashing under load. At the time, individual trekkers frequently voiced concerns about package operators grabbing bulk slots, which eventually led to the portal being temporarily shut down and reworked.
 
-They had disappeared within seconds.
+Since we couldn't secure official permits ourselves, we reached out to a package provider near the base camp. We paid around **₹2,400–₹2,500 per person**, which covered the trek arrangements, accommodation, and meals. Later, while chatting directly with our homestay owner, we learned that booking the stay independently could have cost considerably less. We hadn't chosen a commercial package for convenience; we chose it simply because we couldn't get tickets on our own. 
 
-I even experimented with automating the repetitive form-filling process to make the booking faster. But that didn't solve the real problem. The website itself was struggling under the traffic.
-
-At the time, there were also complaints from individual trekkers about bulk bookings by package operators. I can't independently verify exactly how much that influenced the availability, but it was a common concern among people trying to book.
-
-Eventually, the system was shut down/reworked for a period.
-
-Since we couldn't get the trek slot ourselves, we approached a package provider near the base camp and paid around **₹2,400–₹2,500 per person**, including the trek arrangement, accommodation and food.
-
-Later, after speaking with the homestay owner directly, we learned that arranging the stay and other services ourselves could potentially have cost considerably less.
-
-That was frustrating.
-
-We hadn't chosen a package because we wanted convenience. We chose it because we couldn't get the ticket.
-
-So, if you're planning a similar trek, my advice from this experience is simple: **try booking the trek yourself first, but keep a backup plan.**
-
-We definitely needed one.
+If you are planning this trip, my takeaway is clear: **try booking the official trek slots yourself first, but always have a backup plan ready.**
 
 ***
 
 ## Kerala to Mangalore
 
-We travelled overnight on the **Maveli Express (16604)** and reached Mangalore around 9 AM after a slight delay.
+We took the overnight **Maveli Express (16604)** from Kerala and arrived in Mangalore around 9 AM after a minor delay. After grabbing breakfast, we headed to Kankanady to pick up our rental scooter.
 
-After breakfast, we went to collect our rental scooter from Kankanady.
+Our original plan involved taking local buses from Mangalore, but reviewing the return timetables made us rethink. Finishing a long trek late in the afternoon and relying on sparse bus schedules to reach Mangalore in time for an overnight train wasn't practical. 
 
-Our original plan was to use buses from Mangalore, but once we looked at the return timings, it didn't seem practical. We would finish the trek late in the afternoon and still need to get back to Mangalore.
+We rented a scooter for around **₹500**. The itinerary was simple on paper: **a 120 km ride from Mangalore to Samse, one night at the village, the trek the following day, and a 120 km ride back.**
 
-So we rented a scooter for around **₹500**.
-
-The plan was simple:
-
-**120 km from Mangalore to Samse, one night there, the trek the next day, and 120 km back.**
-
-Simple on paper.
-
-A little less simple in reality.
+Putting that into practice was a slightly different story.
 
 ***
 
 ## The Ride to Samse
 
-The ride from Mangalore to Samse was long, but I genuinely enjoyed it.
+The ride from Mangalore to Samse was long, but I genuinely enjoyed it. Road construction left several stretches dusty and unpaved, but once it started raining, the landscape transformed. Dense greenery, rain-soaked forest roads, and cool mountain air gave the drive the true character of a road trip. We stopped at a roadside restaurant for lunch before continuing towards Samse.
 
-There was road construction in several places, so some sections were dusty and rough. Then it started raining, and the whole route changed character.
+At the forest entrance, we stopped at a checkpost to collect the mandatory vehicle pass. Based on our experience, it cost around **₹40 per vehicle**. The pass had to be handed over at another checkpoint near Samse, with the process reversed on the return leg. *(Note: local fees and forest entry rules can change over time, so this reflects what we experienced during our trip).*
 
-The greenery, forest roads and rain made the ride feel like a proper road trip.
-
-We stopped at a roadside restaurant for lunch and continued towards Samse.
-
-At the forest entrance, there was a checkpost where we had to take the required vehicle pass. Based on our experience, it cost around ₹40 per vehicle. There was another checkpoint on the Samse side, where the pass had to be handed over. The process was reversed while leaving.
-
-The exact rules and fees can change, so this is based on what we experienced during our trip.
-
-One small thing I noticed during the journey was how different some everyday things felt compared with Kerala. We came across several liquor shops that looked almost like modern supermarkets, and at one restaurant we noticed alcohol being served even though the place didn't immediately appear to be a conventional bar.
-
-It was a small observation, but that's one of the things I like about travelling: even a familiar destination can have little differences that catch you off guard.
+One small detail I noticed along the drive was how certain everyday sights differed from Kerala. We passed several liquor shops designed almost like modern supermarkets, and at one roadside restaurant, alcohol was served openly in a setting that didn't resemble a conventional bar. It was a minor observation, but those subtle cultural shifts are part of what makes travelling enjoyable.
 
 ***
 
 ## An Evening in Samse
 
-We reached Samse at around **3 PM**, a day before the trek.
+We pulled into Samse around **3 PM**, a day before our scheduled trek. With a free evening ahead, we walked around the village to explore.
 
-We had a free evening, so we walked around and looked for places to visit.
+Samse doesn't have a long list of tourist attractions. We walked past a quiet temple framed by tea plantations and heard about an old Jain temple nearby that we didn't get to visit. We had hoped to use the scooter to visit a few nearby spots, but several—including Hanuman Gundi Waterfall and a local dam—were closed to visitors during our trip. 
 
-There isn't a huge list of must-see attractions around the village, at least from what we experienced. We came across a temple surrounded by tea plantations, and we also heard about an old Jain temple nearby that we didn't get to visit.
-
-We had planned to use the scooter to explore a few attractions on the way, but several were closed during our visit. Hanuman Gundi Waterfall and some other waterfall spots weren't accessible, and even a dam we came across was closed.
-
-So, in the end, the road itself became the highlight.
-
-And honestly, I was okay with that.
+In the end, the road itself and the quiet village atmosphere became the highlight, and that suited us just fine.
 
 ***
 
 ## The Night Before the Trek
 
-Our stay was comfortable enough, although I wasn't particularly impressed with the food.
+Our stay was comfortable, though the food was unremarkable. Dinner consisted of basic rice, thin sambar, and dal, while breakfast the next morning was idli and sambar—slightly better, but still simple.
 
-Dinner was rice, watery sambar and dal curry. Breakfast the next morning was idli and sambar, which was better, but still nothing memorable.
-
-The thing I remember more clearly from that evening was our failed attempt to find a midnight chai.
-
-In Kerala, going out late at night for tea is pretty normal for us, especially when we're travelling. So we asked the locals where we could get one.
-
-Their response was basically:
+What stands out from that evening was our unsuccessful hunt for a late-night tea. In Kerala, going out late for a hot cup of chai while travelling is routine. When we asked locals where we could find tea at night, their response was direct:
 
 **“This isn't Kerala.”**
 
-It was too late, there wouldn't be anywhere open, and we were better off going back to sleep.
-
-Fair enough.
-
-We did exactly that.
+Shops closed early, nothing would be open, and we were advised to get some sleep. Taking their advice, we called it a night.
 
 ***
 
-# Kudremukh Trek: The Actual Adventure
+## Kudremukh Trek: The Actual Adventure
 
-We were ready by **6 AM**.
+We were awake and ready by **6 AM**. A pickup vehicle arrived to take us to the trailhead, and even that short ride felt like part of the trip. More than ten of us stood squeezed in the back of the open truck, constantly ducking to avoid overhanging branches while half-joking about watching for green pit vipers. 
 
-A pickup vehicle came to take us towards the trekking base, and even that short ride felt like part of the adventure. More than ten people were standing in the back, and we had to keep ducking under branches and leaves.
-
-We were half-joking about watching out for green snakes too.
-
-The trek hadn't even started yet, and we were already having fun.
+Before the trek had even officially started, the mood was great.
 
 ***
 
 ## 22 Kilometres Through the Hills
 
-The trek was roughly **22 km round trip**, about 11 km each way.
+The Kudremukh trail is roughly a **22 km round trip** (about 11 km each way). Physically, the gradient felt moderate, but the sheer distance—combined with persistent rain—made it a genuine challenge. 
 
-For me, the difficulty felt moderate.
+The wet soil turned sections of the path into slick mud. One person in our group struggled with steep, muddy inclines and lost his balance several times. We shared a few laughs in the moment, but it served as an immediate reminder of how unpredictable forest trails become in the monsoon. Even with proper trekking shoes, staying upright required constant focus.
 
-The distance was the bigger challenge.
-
-And then we got rain.
-
-The wet soil made several sections extremely slippery. People were falling everywhere. Some of the falls were funny at the time, but they could easily have gone wrong, especially around rocks or steeper sections.
-
-Proper trekking shoes make a big difference here.
-
-One guy in our group was incredibly tall—almost seven feet, by our estimate—and he struggled on a few sections and fell more than ten times.
-
-We laughed a lot.
-
-But the trail deserved respect.
-
-Even with proper shoes, it was easy to lose your balance.
-
-The scenery, though, was beautiful.
-
-The landscape kept opening up as we climbed, with lush green hills, forests and misty stretches making the effort feel worthwhile.
+The landscape, however, was extraordinary. As we gained altitude, the trail opened up to sweeping green hills, shola forests, and drifting mist that made every step worthwhile.
 
 ***
 
 ## Lunch at the Peak
 
-We reached the peak somewhere between **11 AM and noon**.
+We reached Kudremukh Peak (1,892 m) between **11 AM and noon**. The view across the Western Ghats was incredible—while a flag marks the summit, it is the vast expanse of green rolling hills that holds your attention.
 
-And the view was incredible.
+We sat down to eat our packed lunch, which brought up one minor planning oversight. We had assumed our package included packed lunch boxes for the trail. In reality, while food was provided, containers were not. We had to buy disposable containers locally on the spot. Had we known, we could easily have brought reusable containers from home. 
 
-There was a flag at the top, but honestly, it was the landscape that caught our attention.
+If you are planning this trek, **always bring your own reusable lunch box.**
 
-We had planned to eat our lunch there, but we'd made one small mistake in our planning.
-
-We assumed that because lunch was included in our package, lunch boxes would be provided too.
-
-They weren't.
-
-We had to arrange our own lunch boxes.
-
-We could easily have brought empty reusable ones from Kerala, so this became an unnecessary expense.
-
-That's something I'd definitely do differently next time: **carry your own reusable lunch box.**
-
-We packed the food in the morning, carried it to the peak and finally sat down to eat.
-
-After several hours of walking, lunch tastes different when you're sitting on top of a mountain looking across miles of green.
-
-We spent some time taking photos and enjoying the view before starting the descent.
+After hours of uphill walking, eating lunch while sitting on top of a misty mountain range was immensely satisfying. We spent time taking photos and taking in the panorama before beginning the long walk back down.
 
 ***
 
-## A Small Lesson About Water
+## A Small Lesson About Water & Waste
 
-There were occasional water sources along parts of the trail, including small streams and waterfalls.
+Small streams and waterfalls run along parts of the trail. I used stream water to wash my face and drank a little, but I wouldn't advise drinking untreated natural water unless you know it is safe, as it can contain unfamiliar microbes.
 
-I used some natural water to wash my face and even drank a little, but I wouldn't recommend drinking untreated water unless you know it's safe. It may contain contaminants that you're simply not used to.
+A more important lesson was **rationing drinking water wisely**. We carried water from the base, but after drinking regularly during the ascent, I had very little left at the summit. Wanting to wash my hands after lunch, I had to use a minimal splash and dry them on a towel. For a full-day 22 km trek, carry enough water for both legs of the journey.
 
-For me, the more important lesson was **using drinking water carefully**.
-
-We carried water from the base, and after drinking through the climb, I didn't have much left at the peak.
-
-After lunch, I wanted to wash my hands.
-
-I ended up using just a little water and then drying them with a towel.
-
-It worked, but it wasn't exactly comfortable.
-
-So carry enough water for the whole day, not just for the climb to the top.
-
-And remember that whatever snacks you carry—protein bars, energy bars or anything else—the wrapper comes back with you.
-
-The forest doesn't need our plastic.
+Equally important: **every snack wrapper, bottle, and piece of plastic you take up must come back down with you.** The national park is a sensitive ecosystem, and keeping it clean is every trekker's responsibility.
 
 ***
 
 ## The Race Back to Mangalore
 
-We started descending after spending enough time at the peak and reached the base around **5 PM**.
+We completed the descent and returned to the base camp around **5 PM**. That was when we realized the physical trek wasn't the final obstacle of the day.
 
-That's when we realized the trek wasn't actually the last challenge of the day.
+We still had a **120 km scooter ride back to Mangalore**, and the rental shop closed strictly at **10 PM**. Missing that cutoff meant paying for an extra day and delaying our return home.
 
-We still had **120 km to ride back to Mangalore**.
+There was no time to rest. We geared up and hit the road immediately. While the morning drive had been a relaxed road trip, the evening ride was a focused race against the clock. Covering 120 km on a scooter after walking 22 km is exhausting, but we kept moving and pulled into the rental shop at almost exactly 10 PM. 
 
-And the rental shop closed at **10 PM**.
-
-If we missed that deadline, we'd have to keep the scooter overnight and return it the next morning.
-
-So there wasn't much time to relax.
-
-We got ready and started riding.
-
-The morning journey had been enjoyable and scenic.
-
-The evening journey was different.
-
-We were watching the clock.
-
-After a long trek, 120 km on a scooter isn't exactly what you dream about. But we had no choice.
-
-And somehow, we made it.
-
-We returned the scooter at almost exactly **10 PM**.
-
-That felt like completing a second challenge after the trek itself.
+Completing that ride felt like finishing a second trek in the same day.
 
 ***
 
 ## Back to Kerala
 
-After returning the scooter, we took an Uber to the railway station.
-
-We boarded **Train 12618** around 11:40 PM and finally had a chance to relax.
-
-We reached Kochi around **8 AM the next morning**.
-
-And just like that, the trip was over.
+After handing over the scooter, we took an Uber to the railway station, caught **Train 12618** at 11:40 PM, and finally relaxed. We reached Kochi around **8 AM the next morning**, bringing an intense 48 hours to an end.
 
 ***
 
-# What I'd Recommend for a Kudremukh Trek
+## Practical Recommendations for the Kudremukh Trek
 
-The most useful thing I can say after this trip is that the trek itself isn't the only thing you need to plan.
+If you are planning the Kudremukh trek from Kerala or Mangalore, keep these practical points in mind:
 
-Think about the entire journey.
-
-If you're travelling from Kerala, reaching Mangalore is only the beginning. You still need to figure out how you're getting to Samse, where you're staying, how you're getting to the trailhead and—most importantly—how you're getting back after walking 22 km.
-
-A bus can work if your trek finishes early enough and the current schedules line up.
-
-For us, the rental scooter made more sense because we wanted flexibility.
-
-But that flexibility comes with responsibility. We had to cover 120 km after the trek and return the vehicle before 10 PM.
-
-That isn't something I'd recommend doing casually.
-
-Also, carry your own lunch box, proper trekking shoes, enough water, a few energy snacks and a small bag for your waste.
-
-And don't depend on natural water sources unless you're certain they're safe to drink.
+1. **Transport Logistics**: Reaching Mangalore is only step one. Plan how you will reach Samse, access the trailhead, and return after walking 22 km. Buses work if your timings align, but rental scooters offer flexibility—just be prepared for a long ride after the trek.
+2. **Permits & Booking**: Try booking your trek permits directly on the official Karnataka forest portal well in advance. If slots sell out, look for accredited local homestay packages as a backup.
+3. **Gear & Essentials**: Wear proper trekking shoes with strong grip for slippery mud. Carry a reusable lunch box, sufficient drinking water, energy snacks, rain protection, and a trash bag for your waste.
 
 ***
 
-# Was Kudremukh Worth It?
+## Was Kudremukh Worth It?
 
-Absolutely.
+Absolutely. 
 
-The funny thing is that Kudremukh wasn't even supposed to happen.
+Kudremukh wasn't our original plan, but unexpected detours often create the best travel stories. The sudden trip change, the 240 km scooter ride, the rain-soaked 22 km trail, the failed midnight tea search, and the frantic race back to Mangalore all came together into an unforgettable experience.
 
-We were supposed to trek Netravati.
-
-Then the trek closed.
-
-We couldn't get the booking we wanted.
-
-We ended up taking a package.
-
-We rented a scooter.
-
-We rode 120 km to Samse.
-
-We stayed in a village where we couldn't find our midnight chai.
-
-We woke up at 6 AM.
-
-We walked 22 km through wet, slippery trails.
-
-We ate lunch at the peak.
-
-Then we walked back down and rode another 120 km to Mangalore.
-
-It sounds exhausting when I write it down.
-
-And it was.
-
-But it was also one of those trips where all the little inconveniences become part of the story.
-
-The places we couldn't visit.
-
-The average dinner.
-
-The last-minute change of trek.
-
-The slippery trail.
-
-The race against the clock.
-
-All of it is part of what I remember.
-
-And maybe that's the best thing about travelling.
-
-**The trips you remember most aren't always the ones that went according to plan. They're the ones that went wrong in interesting ways.**
-
-Kudremukh was our backup plan.
-
-I'm glad we took it.
+Standing at the peak looking out across miles of green hills made every bit of effort worth it. If given the choice, I'd do it all over again.
 
 ***
 
 ## More Stories from the Road
 
-I'm planning to document more of my self-planned trips, trekking experiences and budget journeys here.
-
-I'll also share future trips and updates on Instagram Stories.
-
-**Follow me on Instagram and stay around for the next journey.**
+I document self-planned trips, trekking guides, and budget travel experiences right here on my site. Follow along on Instagram for live updates and stories from future journeys.
 
 ---
 
