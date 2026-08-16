@@ -7,6 +7,9 @@ export interface PostFrontmatter {
   category?: 'Tech' | 'Travel' | string
   updatedAt?: string
   readingTime?: string
+  isExternal?: boolean
+  externalUrl?: string
+  platform?: string
   photos?: Array<{
     src: string
     alt?: string

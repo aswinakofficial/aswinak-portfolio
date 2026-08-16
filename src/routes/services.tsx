@@ -1,8 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Link } from '@tanstack/react-router'
 import { Check, ChevronDown } from 'lucide-react'
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { buildPageMeta, buildCanonicalLink, siteConfig } from '@/lib/seo'
 import { faqs } from '@/lib/siteContent'
 import { useState } from 'react'
@@ -76,7 +74,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
     <div className="border-b-2 border-border last:border-b-0">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between gap-4 py-4 text-left font-black text-base hover:text-secondary-foreground transition-colors"
+        className="w-full flex items-center justify-between gap-4 py-4 text-left font-black text-base hover:text-orange transition-colors"
         aria-expanded={open}
       >
         <span>{q}</span>
@@ -116,11 +114,6 @@ function ServicesPage() {
                 ))}
               </ul>
             </CardContent>
-            <CardFooter>
-              <Button asChild className="w-full">
-                <Link to="/contact">Get in touch</Link>
-              </Button>
-            </CardFooter>
           </Card>
         ))}
       </div>

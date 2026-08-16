@@ -1,5 +1,5 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
-import { Clock } from 'lucide-react'
+import { Clock, ExternalLink } from 'lucide-react'
 import { getPostBySlug, getPostModule } from '@/lib/content'
 import { MdxComponents } from '@/components/blog/mdx-components'
 import { MemoryLane, StickyMemoryLaneColumn, MobileMemoryLaneOverlay } from '@/components/blog/memory-lane'
@@ -89,6 +89,10 @@ function BlogPostPage() {
   const module = getPostModule(post.slug)
   const PostContent = module?.default
 
+  const isExternal = Boolean(post.frontmatter.isExternal && post.frontmatter.externalUrl)
+  const externalUrl = post.frontmatter.externalUrl
+  const platform = post.frontmatter.platform || 'External Platform'
+
   const photos = (post.frontmatter.photos || []).map((photo, i) => ({
     ...photo,
     originalIndex: i,
@@ -101,8 +105,8 @@ function BlogPostPage() {
 
   return (
     <>
-      <ReadingProgress />
-      <ScrollToTopBottomButton />
+      {!isExternal && <ReadingProgress />}
+      {!isExternal && <ScrollToTopBottomButton />}
       <article>
         {/* Header */}
         <div className="border-b-[5px] border-border px-4 sm:px-8 md:px-12 pt-10 pb-10 md:pt-16 md:pb-16 brut-dotgrid">
@@ -118,6 +122,11 @@ function BlogPostPage() {
               <Badge className={post.frontmatter.category === 'Travel' ? 'bg-orange text-white' : 'bg-blue text-white'}>
                 {post.frontmatter.category || 'Tech'}
               </Badge>
+              {isExternal && (
+                <Badge className="bg-black text-white border-black font-mono">
+                  Originally on {platform}
+                </Badge>
+              )}
               {post.frontmatter.tags.map((tag) => (
                 <Badge key={tag} variant="secondary">{tag}</Badge>
               ))}
@@ -133,6 +142,21 @@ function BlogPostPage() {
             <p className="text-xl font-medium text-muted-foreground max-w-[680px] mb-10">
               {post.frontmatter.description}
             </p>
+
+            {/* Backlink button inside Hero for External Posts */}
+            {isExternal && externalUrl && (
+              <div className="mb-10">
+                <a
+                  href={externalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 px-6 py-4 border-[3px] border-border bg-orange text-white font-black uppercase tracking-wider text-sm neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all w-fit"
+                >
+                  Read Full Article on {platform}
+                  <ExternalLink className="h-4 w-4 stroke-[3]" />
+                </a>
+              </div>
+            )}
 
             {/* Author + meta */}
             <div className="flex flex-wrap items-center gap-6 border-t-[3px] border-border pt-6">
@@ -162,35 +186,37 @@ function BlogPostPage() {
         </div>
 
         {/* MDX Content + Dual Margin Memory Lane Layout */}
-        <div className="mx-auto max-w-[1720px] px-4 sm:px-6 lg:px-8 2xl:px-12 py-16">
-          <div className={hasPhotos ? 'flex flex-col xl:flex-row gap-8 2xl:gap-12 3xl:gap-16 items-start justify-between' : 'mx-auto max-w-[840px]'}>
+        {!isExternal && (
+          <div className="mx-auto max-w-[1720px] px-4 sm:px-6 lg:px-8 2xl:px-12 py-16">
+            <div className={hasPhotos ? 'flex flex-col xl:flex-row gap-8 2xl:gap-12 3xl:gap-16 items-start justify-between' : 'mx-auto max-w-[840px]'}>
 
-            {/* LEFT Sticky Memory Lane Column (Desktop) */}
-            {hasPhotos && leftPhotos.length > 0 && (
-              <StickyMemoryLaneColumn className="hidden xl:block w-[240px] 2xl:w-[280px] 3xl:w-[320px] flex-shrink-0">
-                <MemoryLane photos={leftPhotos} side="left" />
-              </StickyMemoryLaneColumn>
-            )}
+              {/* LEFT Sticky Memory Lane Column (Desktop) */}
+              {hasPhotos && leftPhotos.length > 0 && (
+                <StickyMemoryLaneColumn className="hidden xl:block w-[240px] 2xl:w-[280px] 3xl:w-[320px] flex-shrink-0">
+                  <MemoryLane photos={leftPhotos} side="left" />
+                </StickyMemoryLaneColumn>
+              )}
 
-            {/* Main Article Content */}
-            <div className="w-full max-w-[820px] 2xl:max-w-[860px] flex-1 min-w-0 mx-auto">
-              <div className="prose prose-neutral dark:prose-invert max-w-none">
-                {PostContent ? <PostContent components={MdxComponents} /> : <p>Content not found.</p>}
+              {/* Main Article Content */}
+              <div className="w-full max-w-[820px] 2xl:max-w-[860px] flex-1 min-w-0 mx-auto">
+                <div className="prose prose-neutral dark:prose-invert max-w-none">
+                  {PostContent ? <PostContent components={MdxComponents} /> : <p>Content not found.</p>}
+                </div>
+
+                {/* Mobile Memory Lane Trigger & Overlay */}
+                {hasPhotos && <MobileMemoryLaneOverlay photos={photos} />}
               </div>
 
-              {/* Mobile Memory Lane Trigger & Overlay */}
-              {hasPhotos && <MobileMemoryLaneOverlay photos={photos} />}
+              {/* RIGHT Sticky Memory Lane Column (Desktop) */}
+              {hasPhotos && rightPhotos.length > 0 && (
+                <StickyMemoryLaneColumn className="hidden xl:block w-[240px] 2xl:w-[280px] 3xl:w-[320px] flex-shrink-0">
+                  <MemoryLane photos={rightPhotos} side="right" />
+                </StickyMemoryLaneColumn>
+              )}
+
             </div>
-
-            {/* RIGHT Sticky Memory Lane Column (Desktop) */}
-            {hasPhotos && rightPhotos.length > 0 && (
-              <StickyMemoryLaneColumn className="hidden xl:block w-[240px] 2xl:w-[280px] 3xl:w-[320px] flex-shrink-0">
-                <MemoryLane photos={rightPhotos} side="right" />
-              </StickyMemoryLaneColumn>
-            )}
-
           </div>
-        </div>
+        )}
       </article>
     </>
   )
