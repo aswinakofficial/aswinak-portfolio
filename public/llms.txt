@@ -23,5 +23,5 @@ AI Engineer experienced in building enterprise semantic systems, RAG, agentic LL
 - [Enterprise RAG System](https://aswin.xpar.in/projects/enterprise-rag): Production RAG pipeline indexing millions of unstructured documents for AI-assisted research.
 
 ## Blog Posts
-- [From Kerala to Kudremukh: When Our Backup Plan Became the Best Part of the Trip](https://aswin.xpar.in/blog/kudremukh-trek-from-kerala): A complete personal account of  Kudremukh trek in Karnataka — from cancelled Netravati plan to a 240 km scooter ride and 22 km trek. (Published: 2026-08-14T00:00:00.000Z)
+- [From Kerala to Kudremukh: When Our Backup Plan Became the Best Part of the Trip](https://aswin.xpar.in/blog/kudremukh-trek-from-kerala): A complete personal account of the Kudremukh trek in Karnataka — from a cancelled Netravati plan to a 240 km scooter ride and 22 km trek. (Published: 2026-08-14T00:00:00.000Z)
 - [How I built an enterprise RAG pipeline that indexes millions of documents](https://aswin.xpar.in/blog/how-i-built-rag-pipeline): A deep dive into building a production RAG system using Databricks, LangChain, and Azure — the architecture, the pitfalls, and what I learned. (Published: 2026-05-01)
