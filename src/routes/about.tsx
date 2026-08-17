@@ -23,7 +23,7 @@ export const Route = createFileRoute('/about')({
           jobTitle: 'AI Engineer & Full-Stack Developer',
           url: siteConfig.url,
           description: 'AI Engineer specializing in RAG pipelines, Agentic AI, and LLM orchestration. Azure AI-102 certified.',
-          sameAs: [siteConfig.links.github, siteConfig.links.linkedin],
+          sameAs: [siteConfig.links.github, siteConfig.links.linkedin, siteConfig.links.instagram],
           hasCredential: {
             '@type': 'EducationalOccupationalCredential',
             name: 'Microsoft Certified: Azure AI Engineer Associate',
