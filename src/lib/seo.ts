@@ -8,6 +8,7 @@ export const siteConfig = {
   links: {
     github: 'https://github.com/aswinakofficial',
     linkedin: 'https://linkedin.com/in/aswinakofficial',
+    instagram: 'https://www.instagram.com/aswin._.a_k/',
   },
 }
 

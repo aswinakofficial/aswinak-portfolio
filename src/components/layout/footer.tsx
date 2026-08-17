@@ -30,6 +30,7 @@ export function Footer() {
               {[
                 { label: 'GH', href: siteConfig.links.github },
                 { label: 'LI', href: siteConfig.links.linkedin },
+                { label: 'IG', href: siteConfig.links.instagram },
               ].map((s) => (
                 <a
                   key={s.label}
@@ -89,6 +90,7 @@ export function Footer() {
             <h4 className="text-xs font-black uppercase tracking-[0.12em] mb-4" style={{ color: '#FFE500' }}>Contact</h4>
             {[
               { label: footerContent.email, href: `mailto:${footerContent.email}` },
+              { label: 'Instagram ↗', href: siteConfig.links.instagram },
               { label: 'Resume ↗', href: '/resume' },
             ].map((l) => (
               <a key={l.href} href={l.href} className="block text-sm font-medium py-1 transition-colors" style={{ opacity: 0.8 }}
@@ -102,7 +104,7 @@ export function Footer() {
               onMouseEnter={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.color = '#FF5C00' }}
               onMouseLeave={e => { e.currentTarget.style.opacity = '0.8'; e.currentTarget.style.color = '' }}
             >
-              Contact form
+              Get in touch
             </Link>
           </div>
         </div>

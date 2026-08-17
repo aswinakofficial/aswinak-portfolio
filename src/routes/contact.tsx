@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Mail, Linkedin, Github } from 'lucide-react'
+import { Mail, Linkedin, Github, Instagram } from 'lucide-react'
 import { buildPageMeta, buildCanonicalLink, siteConfig } from '@/lib/seo'
 import { footer as footerContent } from '@/lib/siteContent'
 
@@ -63,6 +63,19 @@ function ContactPage() {
           <div>
             <div className="text-xs font-bold uppercase tracking-wider opacity-80 mb-0.5">GitHub</div>
             <span>github.com/aswinakofficial</span>
+          </div>
+        </a>
+
+        <a
+          href={siteConfig.links.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-4 border-4 border-border p-4 bg-background neo-shadow hover:-translate-x-0.5 hover:-translate-y-0.5 hover:neo-shadow-lg hover:bg-[#E4405F] hover:text-white transition-all font-black text-lg"
+        >
+          <Instagram className="h-6 w-6 flex-shrink-0" strokeWidth={2.5} />
+          <div>
+            <div className="text-xs font-bold uppercase tracking-wider opacity-80 mb-0.5">Instagram</div>
+            <span>instagram.com/aswin._.a_k</span>
           </div>
         </a>
       </div>
