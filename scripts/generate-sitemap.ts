@@ -53,6 +53,12 @@ async function generateAll() {
     return { slug, frontmatter, body }
   })
 
+  // Helper for consistent trailing slashes
+  const formatUrl = (route: string) => {
+    const clean = route.replace(/^\/+|\/+$/g, '')
+    return clean ? `${BASE_URL}/${clean}/` : `${BASE_URL}/`
+  }
+
   // 1. Generate Sitemap
   const blogRoutes = parsedBlogs.map((b) => `/blog/${b.slug}`)
   const projectRoutes = parsedProjects.map((p) => `/projects/${p.slug}`)
@@ -62,21 +68,56 @@ async function generateAll() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allRoutes
-  .map(
-    (route) => `  <url>
-    <loc>${BASE_URL}${route}</loc>
+  .map((route) => {
+    const fullUrl = formatUrl(route)
+    return `  <url>
+    <loc>${fullUrl}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${route === '/' ? 'weekly' : 'monthly'}</changefreq>
     <priority>${route === '/' ? '1.0' : '0.8'}</priority>
   </url>`
-  )
+  })
   .join('\n')}
 </urlset>`
 
   writeFileSync('public/sitemap.xml', xml)
   console.log(`Sitemap generated with ${allRoutes.length} routes`)
 
-  // 2. Generate llms.txt
+  // 2. Generate RSS Feed (public/rss.xml)
+  const rssItems = parsedBlogs
+    .map((b) => {
+      const postUrl = formatUrl(`/blog/${b.slug}`)
+      const pubDate = b.frontmatter.publishedAt
+        ? new Date(b.frontmatter.publishedAt).toUTCString()
+        : new Date().toUTCString()
+
+      return `    <item>
+      <title><![CDATA[${b.frontmatter.title}]]></title>
+      <link>${postUrl}</link>
+      <guid isPermaLink="true">${postUrl}</guid>
+      <description><![CDATA[${b.frontmatter.description || ''}]]></description>
+      <pubDate>${pubDate}</pubDate>
+    </item>`
+    })
+    .join('\n')
+
+  const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aswin AK — AI Engineer &amp; Full-Stack Developer</title>
+    <link>${BASE_URL}/blog/</link>
+    <description>Articles on AI engineering, technical architecture, and real-world travel journals by Aswin AK.</description>
+    <language>en-us</language>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <atom:link href="${BASE_URL}/rss.xml" rel="self" type="application/rss+xml"/>
+${rssItems}
+  </channel>
+</rss>`
+
+  writeFileSync('public/rss.xml', rssXml)
+  console.log(`RSS feed generated with ${parsedBlogs.length} posts`)
+
+  // 3. Generate llms.txt
   const llmsTxt = `# Aswin AK — AI Engineer & Full-Stack Developer
 
 AI Engineer specializing in RAG pipelines, Agentic AI, LLM orchestration, and full-stack development. Azure AI-102 certified.
@@ -98,19 +139,19 @@ AI Engineer experienced in building enterprise semantic systems, RAG, agentic LL
 
 ## Projects
 ${parsedProjects
-  .map((p) => `- [${p.frontmatter.title}](${BASE_URL}/projects/${p.slug}): ${p.frontmatter.description}`)
+  .map((p) => `- [${p.frontmatter.title}](${formatUrl(`/projects/${p.slug}`)}): ${p.frontmatter.description}`)
   .join('\n')}
 
 ## Blog Posts
 ${parsedBlogs
-  .map((b) => `- [${b.frontmatter.title}](${BASE_URL}/blog/${b.slug}): ${b.frontmatter.description} (Published: ${b.frontmatter.publishedAt})`)
+  .map((b) => `- [${b.frontmatter.title}](${formatUrl(`/blog/${b.slug}`)}): ${b.frontmatter.description} (Published: ${b.frontmatter.publishedAt})`)
   .join('\n')}
 `
 
   writeFileSync('public/llms.txt', llmsTxt)
   console.log(`llms.txt generated successfully`)
 
-  // 3. Generate llms-full.txt
+  // 4. Generate llms-full.txt
   const llmsFullTxt = `${llmsTxt}
 
 ---
@@ -120,7 +161,7 @@ ${parsedBlogs
 ${parsedProjects
   .map(
     (p) => `### Project: ${p.frontmatter.title}
-- **URL**: ${BASE_URL}/projects/${p.slug}
+- **URL**: ${formatUrl(`/projects/${p.slug}`)}
 - **Description**: ${p.frontmatter.description}
 - **Tags**: ${(p.frontmatter.tags || []).join(', ')}
 
@@ -133,7 +174,7 @@ ${p.body}
 ${parsedBlogs
   .map(
     (b) => `### Blog: ${b.frontmatter.title}
-- **URL**: ${BASE_URL}/blog/${b.slug}
+- **URL**: ${formatUrl(`/blog/${b.slug}`)}
 - **Date**: ${b.frontmatter.publishedAt}
 - **Tags**: ${(b.frontmatter.tags || []).join(', ')}
 

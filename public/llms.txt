@@ -18,12 +18,11 @@ AI Engineer experienced in building enterprise semantic systems, RAG, agentic LL
 - **Cloud:** Azure, AWS, Netlify.
 
 ## Projects
-- [RexAI — Agentic Research Assistant](https://aswin.xpar.in/projects/rexai): Multi-agent research workflow that autonomously gathers, synthesises, and reports on complex topics.
-- [RAG Starter Kit](https://aswin.xpar.in/projects/rag-starter-kit): Open-source boilerplate for quickly bootstrapping production-grade RAG systems.
-- [Enterprise RAG System](https://aswin.xpar.in/projects/enterprise-rag): Production RAG pipeline indexing millions of unstructured documents for AI-assisted research.
+- [RexAI — Agentic Research Assistant](https://aswin.xpar.in/projects/rexai/): Multi-agent research workflow that autonomously gathers, synthesises, and reports on complex topics.
+- [RAG Starter Kit](https://aswin.xpar.in/projects/rag-starter-kit/): Open-source boilerplate for quickly bootstrapping production-grade RAG systems.
+- [Enterprise RAG System](https://aswin.xpar.in/projects/enterprise-rag/): Production RAG pipeline indexing millions of unstructured documents for AI-assisted research.
 
 ## Blog Posts
-- [Architecting Autonomous AI Agents with Tool Calling and Structured Memory](https://aswin.xpar.in/blog/medium-building-llm-agents): A deep dive into building deterministic multi-agent workflows with tool boundaries, persistent memory context, and fallback handling. (Published: 2026-06-15)
-- [From Kerala to Kudremukh: When Our Backup Plan Became the Best Part of the Trip](https://aswin.xpar.in/blog/kudremukh-trek-from-kerala): A complete personal account of the Kudremukh trek in Karnataka — from a cancelled Netravati plan to a 240 km scooter ride and 22 km trek. (Published: 2026-08-14T00:00:00.000Z)
-- [How I built an enterprise RAG pipeline that indexes millions of documents](https://aswin.xpar.in/blog/how-i-built-rag-pipeline): A deep dive into building a production RAG system using Databricks, LangChain, and Azure — the architecture, the pitfalls, and what I learned. (Published: 2026-05-01)
-- [Real-Time Embedded Vision on ESP32-S3 with Edge Impulse](https://aswin.xpar.in/blog/hackster-tinyml-computer-vision): How to train and deploy a low-power TinyML object detection model directly onto ESP32 hardware. (Published: 2026-04-10)
+- [ Tailwind CSS — The Framework That Changed How I Write Styles](https://aswin.xpar.in/blog/tailwind-css-the-design-system/): I’ve tried countless CSS frameworks, but Tailwind CSS completely changed the way I approach styling. It’s not “just another utility library” — it’s a design system built for efficiency, scalability, and creative freedom. (Published: 2026-10-21T19:48:59.688Z)
+- [From Kerala to Kudremukh: When Our Backup Plan Became the Best Part of the Trip](https://aswin.xpar.in/blog/kudremukh-trek-from-kerala/): A complete personal account of the Kudremukh trek in Karnataka — from a cancelled Netravati plan to a 240 km scooter ride and 22 km trek. (Published: 2026-08-14T00:00:00.000Z)
+- [Rubber-ducky using ARDUINO](https://aswin.xpar.in/blog/arduino-rubber-ducky/): Ever heard of USB rubber ducky? Well, simply it is a programmed USB keyboard in the form of a pendrive, Can we make it using an arduino! (Published: 2022-01-22T00:00:00.000Z)
