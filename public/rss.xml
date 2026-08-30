@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aswin AK — AI Engineer &amp; Full-Stack Developer</title>
+    <link>https://aswin.xpar.in/blog/</link>
+    <description>Articles on AI engineering, technical architecture, and real-world travel journals by Aswin AK.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Aug 2026 12:21:17 GMT</lastBuildDate>
+    <atom:link href="https://aswin.xpar.in/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title><![CDATA[ Tailwind CSS — The Framework That Changed How I Write Styles]]></title>
+      <link>https://aswin.xpar.in/blog/tailwind-css-the-design-system/</link>
+      <guid isPermaLink="true">https://aswin.xpar.in/blog/tailwind-css-the-design-system/</guid>
+      <description><![CDATA[I’ve tried countless CSS frameworks, but Tailwind CSS completely changed the way I approach styling. It’s not “just another utility library” — it’s a design system built for efficiency, scalability, and creative freedom.]]></description>
+      <pubDate>Wed, 21 Oct 2026 19:48:59 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[From Kerala to Kudremukh: When Our Backup Plan Became the Best Part of the Trip]]></title>
+      <link>https://aswin.xpar.in/blog/kudremukh-trek-from-kerala/</link>
+      <guid isPermaLink="true">https://aswin.xpar.in/blog/kudremukh-trek-from-kerala/</guid>
+      <description><![CDATA[A complete personal account of the Kudremukh trek in Karnataka — from a cancelled Netravati plan to a 240 km scooter ride and 22 km trek.]]></description>
+      <pubDate>Fri, 14 Aug 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[Rubber-ducky using ARDUINO]]></title>
+      <link>https://aswin.xpar.in/blog/arduino-rubber-ducky/</link>
+      <guid isPermaLink="true">https://aswin.xpar.in/blog/arduino-rubber-ducky/</guid>
+      <description><![CDATA[Ever heard of USB rubber ducky? Well, simply it is a programmed USB keyboard in the form of a pendrive, Can we make it using an arduino!]]></description>
+      <pubDate>Sat, 22 Jan 2022 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

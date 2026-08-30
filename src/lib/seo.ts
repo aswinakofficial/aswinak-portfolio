@@ -12,6 +12,12 @@ export const siteConfig = {
   },
 }
 
+export function formatUrlPath(slug?: string): string {
+  if (!slug) return `${siteConfig.url}/`
+  const clean = slug.replace(/^\/+|\/+$/g, '')
+  return `${siteConfig.url}/${clean}/`
+}
+
 export function buildPageMeta(options: {
   title?: string
   description?: string
@@ -23,7 +29,7 @@ export function buildPageMeta(options: {
     ? `${options.title} — ${siteConfig.name}`
     : siteConfig.title
   const description = options.description ?? siteConfig.description
-  const url = options.slug ? `${siteConfig.url}/${options.slug}` : siteConfig.url
+  const url = formatUrlPath(options.slug)
   const image = options.image ?? siteConfig.ogImage
 
   return [
@@ -42,6 +48,6 @@ export function buildPageMeta(options: {
 }
 
 export function buildCanonicalLink(slug?: string) {
-  const href = slug ? `${siteConfig.url}/${slug}` : siteConfig.url
+  const href = formatUrlPath(slug)
   return { rel: 'canonical', href }
 }
