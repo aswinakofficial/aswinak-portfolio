@@ -3,6 +3,7 @@ import { Toaster } from '@/components/ui/sonner'
 import { ThemeProvider } from '@/lib/theme'
 import { Navbar } from '@/components/layout/navbar'
 import { Footer } from '@/components/layout/footer'
+import { NotFoundPage } from '@/components/layout/not-found'
 import { siteConfig } from '@/lib/seo'
 
 import appCss from '../styles.css?url'
@@ -50,6 +51,7 @@ export const Route = createRootRoute({
     ],
   }),
   component: RootDocument,
+  notFoundComponent: NotFoundPage,
 })
 
 function RootDocument() {

@@ -60,19 +60,29 @@ async function generateAll() {
   }
 
   // 1. Generate Sitemap
-  const blogRoutes = parsedBlogs.map((b) => `/blog/${b.slug}`)
+  // External posts are noindexed teasers, so they don't belong in the sitemap
+  const indexableBlogs = parsedBlogs.filter((b) => b.frontmatter.isExternal !== 'true')
+  const blogRoutes = indexableBlogs.map((b) => `/blog/${b.slug}`)
   const projectRoutes = parsedProjects.map((p) => `/projects/${p.slug}`)
   const allRoutes = [...STATIC_ROUTES, ...blogRoutes, ...projectRoutes]
-  const today = new Date().toISOString().split('T')[0]
+
+  // Only emit lastmod when we know a real content date; a build-time date on every
+  // URL teaches Google to ignore lastmod entirely
+  const lastmodByRoute = new Map(
+    indexableBlogs.map((b) => {
+      const date = b.frontmatter.updatedAt || b.frontmatter.publishedAt
+      return [`/blog/${b.slug}`, date ? new Date(date).toISOString().split('T')[0] : undefined]
+    })
+  )
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allRoutes
   .map((route) => {
     const fullUrl = formatUrl(route)
+    const lastmod = lastmodByRoute.get(route)
     return `  <url>
-    <loc>${fullUrl}</loc>
-    <lastmod>${today}</lastmod>
+    <loc>${fullUrl}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}
     <changefreq>${route === '/' ? 'weekly' : 'monthly'}</changefreq>
     <priority>${route === '/' ? '1.0' : '0.8'}</priority>
   </url>`

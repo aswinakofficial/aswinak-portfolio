@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Check, ChevronDown } from 'lucide-react'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
-import { buildPageMeta, buildCanonicalLink, siteConfig } from '@/lib/seo'
+import { buildPageMeta, buildCanonicalLink, formatUrlPath, siteConfig } from '@/lib/seo'
 import { faqs } from '@/lib/siteContent'
 import { useState } from 'react'
 
@@ -23,7 +23,7 @@ export const Route = createFileRoute('/services')({
           '@context': 'https://schema.org',
           '@type': 'ProfessionalService',
           name: `${siteConfig.name} — AI Engineering Services`,
-          url: `${siteConfig.url}/services`,
+          url: formatUrlPath('services'),
           description: 'AI engineering services including RAG system design, Agentic AI workflows, LLM orchestration, and full-stack development.',
           provider: {
             '@type': 'Person',

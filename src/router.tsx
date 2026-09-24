@@ -5,6 +5,8 @@ export function getRouter() {
   const router = createTanStackRouter({
     routeTree,
     scrollRestoration: true,
+    // Canonical URLs end in '/', so emit links that match and avoid a 301 hop
+    trailingSlash: 'always',
     defaultPreload: 'intent',
     defaultPreloadStaleTime: 0,
   })

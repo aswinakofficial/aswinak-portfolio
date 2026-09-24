@@ -35,7 +35,7 @@ export function HireCta() {
 
           <div className="flex flex-col gap-3.5 lg:items-end flex-shrink-0">
             <Link
-              to="/contact"
+              to="/contact/"
               className="hire-cta-primary-btn inline-flex items-center gap-2.5 px-8 py-5 border-[4px] font-black text-lg uppercase tracking-wide hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
             >
               Start a project <ArrowRight className="h-5 w-5" strokeWidth={3} />

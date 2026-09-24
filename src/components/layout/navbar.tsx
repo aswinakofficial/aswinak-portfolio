@@ -5,10 +5,10 @@ import { ThemeToggle } from './theme-toggle'
 
 const navLinks = [
   { to: '/', label: 'Home' },
-  { to: '/projects', label: 'Projects' },
-  { to: '/blog', label: 'Blog' },
-  { to: '/about', label: 'About' },
-  { to: '/services', label: 'Services' },
+  { to: '/projects/', label: 'Projects' },
+  { to: '/blog/', label: 'Blog' },
+  { to: '/about/', label: 'About' },
+  { to: '/services/', label: 'Services' },
 ] as const
 
 export function Navbar() {
@@ -46,7 +46,7 @@ export function Navbar() {
 
           {/* Hire Me CTA */}
           <Link
-            to="/contact"
+            to="/contact/"
             className="hidden md:inline-flex items-center gap-2 px-4 py-2 text-sm font-black uppercase tracking-wide bg-orange text-white border-[3px] border-border neo-shadow-sm hover:translate-x-[-2px] hover:translate-y-[-2px] hover:neo-shadow transition-all"
           >
             Work With Me
@@ -74,7 +74,7 @@ export function Navbar() {
                   </Link>
                 ))}
                 <Link
-                  to="/contact"
+                  to="/contact/"
                   className="mt-4 flex items-center justify-center px-4 py-3 text-sm font-black uppercase tracking-wide bg-orange text-white border-[3px] border-border neo-shadow-sm"
                 >
                   Work With Me
