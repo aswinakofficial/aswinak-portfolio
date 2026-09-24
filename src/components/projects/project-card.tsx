@@ -52,7 +52,7 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
         {/* Footer */}
         <div className="flex items-center justify-between pt-3 border-t-[3px] border-border mt-auto">
           <Link
-            to="/projects/$slug"
+            to="/projects/$slug/"
             params={{ slug }}
             className="font-black text-xs uppercase tracking-wider flex items-center gap-1.5 hover:bg-secondary px-1.5 py-1 -mx-1.5 transition-colors"
           >

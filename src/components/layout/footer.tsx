@@ -58,10 +58,10 @@ export function Footer() {
             <h4 className="text-xs font-black uppercase tracking-[0.12em] mb-4" style={{ color: '#FFE500' }}>Sitemap</h4>
             {[
               { label: 'Home', to: '/' },
-              { label: 'Projects', to: '/projects' },
-              { label: 'Blog', to: '/blog' },
-              { label: 'About', to: '/about' },
-              { label: 'Services', to: '/services' },
+              { label: 'Projects', to: '/projects/' },
+              { label: 'Blog', to: '/blog/' },
+              { label: 'About', to: '/about/' },
+              { label: 'Services', to: '/services/' },
             ].map((l) => (
               <Link key={l.to} to={l.to} className="block text-sm font-medium py-1 transition-colors" style={{ opacity: 0.8 }}
                 onMouseEnter={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.color = '#FF5C00' }}
@@ -76,7 +76,7 @@ export function Footer() {
           <div>
             <h4 className="text-xs font-black uppercase tracking-[0.12em] mb-4" style={{ color: '#FFE500' }}>Work</h4>
             {['Solutions', 'For Fun', 'Open Source', 'Writing'].map((l) => (
-              <a key={l} href="/projects" className="block text-sm font-medium py-1 transition-colors" style={{ opacity: 0.8 }}
+              <a key={l} href="/projects/" className="block text-sm font-medium py-1 transition-colors" style={{ opacity: 0.8 }}
                 onMouseEnter={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.color = '#FF5C00' }}
                 onMouseLeave={e => { e.currentTarget.style.opacity = '0.8'; e.currentTarget.style.color = '' }}
               >
@@ -91,7 +91,7 @@ export function Footer() {
             {[
               { label: footerContent.email, href: `mailto:${footerContent.email}` },
               { label: 'Instagram ↗', href: siteConfig.links.instagram },
-              { label: 'Resume ↗', href: '/resume' },
+              { label: 'Resume ↗', href: '/resume/' },
             ].map((l) => (
               <a key={l.href} href={l.href} className="block text-sm font-medium py-1 transition-colors" style={{ opacity: 0.8 }}
                 onMouseEnter={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.color = '#FF5C00' }}
@@ -100,7 +100,7 @@ export function Footer() {
                 {l.label}
               </a>
             ))}
-            <Link to="/contact" className="block text-sm font-medium py-1 transition-colors" style={{ opacity: 0.8 }}
+            <Link to="/contact/" className="block text-sm font-medium py-1 transition-colors" style={{ opacity: 0.8 }}
               onMouseEnter={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.color = '#FF5C00' }}
               onMouseLeave={e => { e.currentTarget.style.opacity = '0.8'; e.currentTarget.style.color = '' }}
             >

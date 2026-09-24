@@ -80,19 +80,19 @@ export function Hero() {
           {/* CTAs */}
           <motion.div {...fadeUpDelay2} className="flex flex-wrap items-center gap-6 mt-2">
             <Link
-              to="/projects"
+              to="/projects/"
               className="inline-flex items-center gap-2.5 px-6 py-3 border-[4px] border-border bg-orange text-white font-black text-sm sm:text-base uppercase tracking-wide neo-shadow hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
             >
               View Projects <ArrowRight className="h-5 w-5" strokeWidth={3} />
             </Link>
             <Link
-              to="/contact"
+              to="/contact/"
               className="inline-flex items-center gap-2.5 px-6 py-3 border-[4px] border-border bg-secondary text-secondary-foreground font-black text-sm sm:text-base uppercase tracking-wide neo-shadow hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all"
             >
               Work With Me <ArrowRight className="h-5 w-5" strokeWidth={3} />
             </Link>
             <Link
-              to="/resume"
+              to="/resume/"
               className="inline-flex items-center gap-2 font-mono text-sm sm:text-base font-black uppercase tracking-wider text-foreground hover:text-orange transition-colors border-b-[4px] border-dashed border-foreground hover:border-orange py-1 px-0.5"
             >
               <FileText className="h-4 w-4" /> View Resume

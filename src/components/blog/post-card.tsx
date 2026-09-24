@@ -61,7 +61,7 @@ export function PostCard({ post }: { post: Post }) {
           <ExternalLink className="h-4 w-4 flex-shrink-0 mt-1 text-muted-foreground group-hover:text-orange transition-colors" />
         </a>
       ) : (
-        <Link to="/blog/$slug" params={{ slug: post.slug }} className="group">
+        <Link to="/blog/$slug/" params={{ slug: post.slug }} className="group">
           <h3 className="font-display font-black text-xl leading-tight tracking-tight group-hover:text-orange transition-colors">
             {post.frontmatter.title}
           </h3>
@@ -92,7 +92,7 @@ export function PostCard({ post }: { post: Post }) {
           </a>
         ) : (
           <Link
-            to="/blog/$slug"
+            to="/blog/$slug/"
             params={{ slug: post.slug }}
             className="font-black text-xs uppercase tracking-wider flex items-center gap-1 hover:bg-secondary px-1.5 py-1 -mr-1.5 transition-colors text-foreground"
           >

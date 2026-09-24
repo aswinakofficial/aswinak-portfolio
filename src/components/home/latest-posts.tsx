@@ -154,7 +154,7 @@ export function LatestPosts() {
           <div className="flex flex-col items-end gap-3 flex-shrink-0">
             <CategoryDropdown selected={category} onSelect={setCategory} counts={counts} />
             <Link
-              to="/blog"
+              to="/blog/"
               className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold tracking-[0.08em] uppercase underline underline-offset-4 text-muted-foreground hover:text-foreground transition-colors"
             >
               All Articles & Journals <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={3} />
@@ -187,7 +187,7 @@ export function LatestPosts() {
                   ))}
                 </div>
 
-                <Link to="/blog/$slug" params={{ slug: post.slug }} className="group">
+                <Link to="/blog/$slug/" params={{ slug: post.slug }} className="group">
                   <h3 className="font-display font-black text-xl leading-tight tracking-tight group-hover:text-orange transition-colors">
                     {post.frontmatter.title}
                   </h3>
@@ -206,7 +206,7 @@ export function LatestPosts() {
                     </span>
                   </div>
                   <Link
-                    to="/blog/$slug"
+                    to="/blog/$slug/"
                     params={{ slug: post.slug }}
                     className="font-black text-xs uppercase tracking-wider flex items-center gap-1 hover:bg-secondary px-1.5 py-1 -mr-1.5 transition-colors"
                   >

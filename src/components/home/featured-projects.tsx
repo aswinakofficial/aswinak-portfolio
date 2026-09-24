@@ -154,7 +154,7 @@ export function FeaturedProjects() {
           <div className="flex flex-col items-end gap-3 flex-shrink-0">
             <CategoryDropdown value={category} onChange={setCategory} counts={counts} />
             <Link
-              to="/projects"
+              to="/projects/"
               className="font-mono text-xs font-semibold tracking-[0.08em] uppercase underline underline-offset-4"
               style={{ color: 'var(--muted-foreground)' }}
             >
@@ -204,7 +204,7 @@ export function FeaturedProjects() {
 
                 <div className="flex items-center justify-between pt-3 border-t-[3px] border-[#0A0A0A] mt-auto">
                   <Link
-                    to="/projects/$slug"
+                    to="/projects/$slug/"
                     params={{ slug: project.slug }}
                     className="font-black text-xs uppercase tracking-wider flex items-center gap-1.5 hover:bg-secondary px-1.5 py-1 -mx-1.5 transition-colors"
                   >

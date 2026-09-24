@@ -5,7 +5,7 @@ import { MdxComponents } from '@/components/blog/mdx-components'
 import { MemoryLane, StickyMemoryLaneColumn, MobileMemoryLaneOverlay } from '@/components/blog/memory-lane'
 import { ReadingProgress } from '@/components/blog/reading-progress'
 import { ScrollToTopBottomButton } from '@/components/blog/scroll-nav-button'
-import { buildPageMeta, buildCanonicalLink, siteConfig } from '@/lib/seo'
+import { buildPageMeta, buildCanonicalLink, formatUrlPath, siteConfig } from '@/lib/seo'
 import { formatDate } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
 
@@ -38,6 +38,8 @@ export const Route = createFileRoute('/blog/$slug')({
         { property: 'og:article:author', content: siteConfig.name },
         { property: 'og:article:tag', content: post.frontmatter.tags.join(', ') },
         ...(post.frontmatter.category ? [{ property: 'og:article:section', content: post.frontmatter.category }] : []),
+        // External posts are short teasers for content hosted elsewhere; keep them out of the index
+        ...(post.frontmatter.isExternal ? [{ name: 'robots', content: 'noindex, follow' }] : []),
       ],
       links: [buildCanonicalLink(`blog/${post.slug}`)],
       scripts: [
@@ -50,7 +52,7 @@ export const Route = createFileRoute('/blog/$slug')({
             description: post.frontmatter.description,
             datePublished: post.frontmatter.publishedAt,
             dateModified: post.frontmatter.updatedAt ?? post.frontmatter.publishedAt,
-            url: `${siteConfig.url}/blog/${post.slug}`,
+            url: formatUrlPath(`blog/${post.slug}`),
             ...(timeRequiredISO && { timeRequired: timeRequiredISO }),
             ...(post.frontmatter.category && { articleSection: post.frontmatter.category }),
             keywords: post.frontmatter.tags.join(', '),
@@ -66,8 +68,8 @@ export const Route = createFileRoute('/blog/$slug')({
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.url },
-              { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteConfig.url}/blog` },
+              { '@type': 'ListItem', position: 1, name: 'Home', item: formatUrlPath() },
+              { '@type': 'ListItem', position: 2, name: 'Blog', item: formatUrlPath('blog') },
               { '@type': 'ListItem', position: 3, name: post.frontmatter.title },
             ],
           }),
@@ -113,7 +115,7 @@ function BlogPostPage() {
           <div className="mx-auto max-w-[1280px]">
             {/* Breadcrumb + tags */}
             <div className="flex items-center gap-3 font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-7">
-              <a href="/blog" className="hover:text-foreground transition-colors">← Blog</a>
+              <a href="/blog/" className="hover:text-foreground transition-colors">← Blog</a>
               <span className="opacity-40">/</span>
               <span className="font-bold text-foreground">{post.frontmatter.category || 'Tech'}</span>
             </div>

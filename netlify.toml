@@ -16,12 +16,12 @@
   to = "/resume.pdf"
   status = 301
 
-# SPA fallback — let TanStack Router handle client-side navigation.
-# Must come AFTER the /api redirect.
+# Every page is prerendered, so anything without a matching file is a real 404.
+# (A 200 SPA fallback here made unknown URLs serve the homepage — soft 404s in GSC.)
 [[redirects]]
   from = "/*"
-  to = "/index.html"
-  status = 200
+  to = "/404/index.html"
+  status = 404
 
 # Cache hashed assets forever
 [[headers]]
