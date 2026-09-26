@@ -12,7 +12,7 @@ export const Route = createFileRoute('/')({
       ...buildPageMeta({}),
       {
         name: 'keywords',
-        content: 'AI Engineer, RAG, LangChain, Azure, Full-Stack Developer, Agentic AI',
+        content: 'Product Engineer, AI, RAG, LangChain, Azure, Full-Stack Developer, Agentic AI',
       },
     ],
     links: [buildCanonicalLink()],
@@ -23,7 +23,7 @@ export const Route = createFileRoute('/')({
           '@context': 'https://schema.org',
           '@type': 'Person',
           name: siteConfig.name,
-          jobTitle: 'AI Engineer & Full-Stack Developer',
+          jobTitle: 'Product Engineer',
           url: siteConfig.url,
           sameAs: [siteConfig.links.github, siteConfig.links.linkedin, siteConfig.links.instagram],
           hasCredential: {

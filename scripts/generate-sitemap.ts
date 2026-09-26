@@ -114,7 +114,7 @@ ${allRoutes
   const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Aswin AK — AI Engineer &amp; Full-Stack Developer</title>
+    <title>Aswin AK — Product Engineer</title>
     <link>${BASE_URL}/blog/</link>
     <description>Articles on AI engineering, technical architecture, and real-world travel journals by Aswin AK.</description>
     <language>en-us</language>
@@ -128,9 +128,9 @@ ${rssItems}
   console.log(`RSS feed generated with ${parsedBlogs.length} posts`)
 
   // 3. Generate llms.txt
-  const llmsTxt = `# Aswin AK — AI Engineer & Full-Stack Developer
+  const llmsTxt = `# Aswin AK — Product Engineer
 
-AI Engineer specializing in RAG pipelines, Agentic AI, LLM orchestration, and full-stack development. Azure AI-102 certified.
+Product engineer building AI-powered products end to end: RAG pipelines, agentic workflows, data pipelines and full-stack apps. Azure AI-102 certified.
 
 - URL: ${BASE_URL}
 - GitHub: https://github.com/aswinakofficial
@@ -138,7 +138,7 @@ AI Engineer specializing in RAG pipelines, Agentic AI, LLM orchestration, and fu
 
 ## About
 
-AI Engineer experienced in building enterprise semantic systems, RAG, agentic LLM flows, and full-stack applications.
+Product engineer experienced in building enterprise semantic systems, RAG, agentic LLM flows, and full-stack applications.
 
 ## Technical Skills
 

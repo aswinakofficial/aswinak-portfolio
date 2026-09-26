@@ -7,7 +7,7 @@ export const Route = createFileRoute('/contact')({
   head: () => ({
     meta: buildPageMeta({
       title: 'Contact',
-      description: 'Get in touch with Aswin AK — AI engineer and builder. Happy to talk about AI systems, data pipelines, side projects and interesting problems.',
+      description: 'Get in touch with Aswin AK — product engineer and builder. Happy to talk about AI systems, data pipelines, side projects and interesting problems.',
       slug: 'contact',
     }),
     links: [buildCanonicalLink('contact')],

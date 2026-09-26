@@ -7,10 +7,10 @@ export const Route = createFileRoute('/about')({
     meta: [
       ...buildPageMeta({
         title: 'About',
-        description: 'Learn more about Aswin AK — AI Engineer, Full-Stack Developer, and Azure AI-102 certified professional.',
+        description: 'Learn more about Aswin AK — product engineer building AI-powered products, and Azure AI-102 certified.',
         slug: 'about',
       }),
-      { name: 'keywords', content: 'AI engineer, RAG engineer, LangChain developer, Azure AI-102, full-stack AI developer, Kerala India' },
+      { name: 'keywords', content: 'product engineer, AI engineer, RAG engineer, LangChain developer, Azure AI-102, full-stack AI developer, Kerala India' },
     ],
     links: [buildCanonicalLink('about')],
     scripts: [
@@ -20,9 +20,9 @@ export const Route = createFileRoute('/about')({
           '@context': 'https://schema.org',
           '@type': 'Person',
           name: siteConfig.name,
-          jobTitle: 'AI Engineer & Full-Stack Developer',
+          jobTitle: 'Product Engineer',
           url: siteConfig.url,
-          description: 'AI Engineer specializing in RAG pipelines, Agentic AI, and LLM orchestration. Azure AI-102 certified.',
+          description: 'Product engineer specializing in AI products: RAG pipelines, agentic AI and LLM orchestration. Azure AI-102 certified.',
           sameAs: [siteConfig.links.github, siteConfig.links.linkedin, siteConfig.links.instagram],
           hasCredential: {
             '@type': 'EducationalOccupationalCredential',
