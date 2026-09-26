@@ -18,7 +18,7 @@ AI Engineer experienced in building enterprise semantic systems, RAG, agentic LL
 - **Cloud:** Azure, AWS, Netlify.
 
 ## Projects
-- [Prepora — Exam Question Intelligence Platform](https://aswin.xpar.in/projects/prepora/): Data-engineering project crawling previous-year exam papers into a structured question bank, with RAG, GraphRAG and exam-trend prediction planned.
+- [Prepora — Exam Question Intelligence Platform](https://aswin.xpar.in/projects/prepora/): Data-engineering project crawling previous-year exam papers into a structured question bank, with GraphRAG and exam-trend prediction planned.
 
 ## Blog Posts
 - [ Tailwind CSS — The Framework That Changed How I Write Styles](https://aswin.xpar.in/blog/tailwind-css-the-design-system/): I’ve tried countless CSS frameworks, but Tailwind CSS completely changed the way I approach styling. It’s not “just another utility library” — it’s a design system built for efficiency, scalability, and creative freedom. (Published: 2026-10-21T19:48:59.688Z)
