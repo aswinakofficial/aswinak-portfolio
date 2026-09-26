@@ -1,0 +1,35 @@
+---
+title: "Prepora — Exam Question Intelligence Platform"
+description: "Data-engineering project crawling previous-year exam papers into a structured question bank, with RAG, GraphRAG and exam-trend prediction planned."
+category: "Open Source"
+tags: ["Data Engineering", "Python", "TanStack Start", "PostgreSQL", "RAG"]
+featured: true
+demo: "https://prepora.xpar.in"
+github: "https://github.com/aswinakofficial/prepora"
+slug: "prepora"
+---
+
+## The idea
+
+Previous-year question papers are some of the most useful material for exam preparation, but they're scattered across PDFs, government sites and coaching portals, in inconsistent formats and with no easy way to search them.
+
+Prepora aims to fix that by crawling previous-year papers for exams such as **Kerala PSC, GATE, SSC JE, UPSC** and **Microsoft certifications**, and turning them into one structured, searchable question bank with answers and explanations.
+
+## What it's built to do
+
+At its core, Prepora is a data-engineering project:
+
+- **Crawling and ingestion**: a crawling engine that collects question papers from many sources and exams
+- **Normalisation and deduplication**: turning messy source formats into clean, validated questions and catching repeats across papers
+- **A canonical question model**: each question stored once and linked to every exam and year it appeared in, so you can see how often a question or topic recurs
+- **A fast, SEO-first web app** for browsing exams and question sets
+
+**Stack:** TanStack Start + React, Tailwind CSS, PostgreSQL (Neon) with Drizzle ORM, oRPC, Zod, Better Auth, and a Python + FastAPI scraping service.
+
+## Roadmap
+
+- **RAG over the question bank**: natural-language search and grounded explanations for answers
+- **GraphRAG**: a knowledge graph connecting topics, questions and exams, to answer questions like "which topics does this exam keep coming back to?"
+- **Exam-trend prediction**: using years of structured history to surface recurring topics and patterns for upcoming exams. Whether this can predict anything reliably is an open question the project is exploring.
+
+Prepora is in active development; the repository's roadmap tracks what's being built next.

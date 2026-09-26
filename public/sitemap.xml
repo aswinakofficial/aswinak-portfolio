@@ -42,17 +42,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aswin.xpar.in/projects/rexai/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aswin.xpar.in/projects/rag-starter-kit/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aswin.xpar.in/projects/enterprise-rag/</loc>
+    <loc>https://aswin.xpar.in/projects/prepora/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
