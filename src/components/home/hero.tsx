@@ -128,7 +128,7 @@ export function Hero() {
               animate={{ rotate: [-6, -3, -7, -5] }}
               transition={{ repeat: Infinity, duration: 4.2, ease: "easeInOut" }}
             >
-              🛠️ {hero.stickerAvailability}
+              ☕ {hero.stickerAvailability}
             </motion.div>
 
             <motion.div
