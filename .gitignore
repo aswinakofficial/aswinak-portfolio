@@ -15,3 +15,6 @@ tina/__generated__
 
 # Local Netlify folder
 .netlify
+
+# Local Claude Code preview config
+.claude/launch.json
