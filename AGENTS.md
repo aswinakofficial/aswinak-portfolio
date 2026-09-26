@@ -1,8 +1,6 @@
 <!-- intent-skills:start -->
 # Skill mappings - load `use` with `pnpm dlx @tanstack/intent@latest load <use>`.
 skills:
-  - when: "Edit, review, structure, format, or optimize travel blog posts, personal travel accounts, MDX stories, Memory Lane photo collages, and itinerary recommendations."
-    use: ".claude/skills/travel-blog-editor/SKILL.md"
   - when: "Install TanStack Devtools, pick framework adapter (React/Vue/Solid/Preact), register plugins via plugins prop, configure shell (position, hotkeys, theme, hideUntilHover, requireUrlFlag, eventBusConfig). TanStackDevtools component, defaultOpen, localStorage persistence."
     use: "@tanstack/devtools#devtools-app-setup"
   - when: "Publish plugin to npm and submit to TanStack Devtools Marketplace. PluginMetadata registry format, plugin-registry.ts, pluginImport (importName, type), requires (packageName, minVersion), framework tagging, multi-framework submissions, featured plugins."
@@ -48,3 +46,10 @@ skills:
   - when: "TanStack Router bundler plugin for route generation and automatic code splitting. Supports Vite, Webpack, Rspack, and esbuild. Configures autoCodeSplitting, routesDirectory, target framework, and code split groupings."
     use: "@tanstack/router-plugin#router-plugin"
 <!-- intent-skills:end -->
+
+# Project skills (hand-maintained; Claude Code also auto-discovers .claude/skills/)
+project_skills:
+  - when: "Edit, review, structure, format, or optimize travel blog posts, personal travel accounts, MDX stories, Memory Lane photo collages, and itinerary recommendations."
+    use: ".claude/skills/travel-blog-editor/SKILL.md"
+  - when: "Plan, write, edit, technically review, or SEO-audit technical blog posts (category Tech) on AI engineering, RAG, agents, LLMs, full-stack and web dev; generate post ideas; write LinkedIn summaries that link back."
+    use: ".claude/skills/tech-blog-editor/SKILL.md"
