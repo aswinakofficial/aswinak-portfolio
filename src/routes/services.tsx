@@ -95,7 +95,7 @@ function ServicesPage() {
       </div>
       <h1 className="text-5xl font-black mb-2 leading-tight">What I Build</h1>
       <p className="text-muted-foreground text-xl font-medium mb-12">
-        These are the things I love building — and want to keep doing in my next role.
+        The kinds of systems I love building, and the problems I keep coming back to.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
         {services.map((service) => (

@@ -223,7 +223,6 @@ export default defineConfig({
           { type: 'string', name: 'tagline',   label: 'Footer Tagline', ui: { component: 'textarea' } },
           { type: 'string', name: 'email',     label: 'Email',          required: true },
           { type: 'string', name: 'copyright', label: 'Copyright Name' },
-          { type: 'string', name: 'builtWith', label: 'Built With Text' },
         ],
       },
 
