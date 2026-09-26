@@ -70,7 +70,7 @@ Edit the `.mdx` directly in modes B and C; modes A, D, E and F only report or re
 
 **Code that runs.** Code shown must be complete enough to run or clearly marked as an excerpt (`// ...`). Include imports, use real package names, pin or state versions, show expected output where it helps. Prefer the author's real code, trimmed to what the point needs. If you can execute a snippet locally in a scratch directory, do; otherwise say it's untested.
 
-**Confidentiality.** The author works as an AI engineer at a consulting firm. Never include client names, internal system names, internal URLs, proprietary architecture details, real data, credentials, API keys, tenant/subscription IDs or screenshots showing any of these. Generalise ("a large enterprise document corpus") and flag anything borderline for the author to confirm.
+**Confidentiality.** The author works as a product engineer at a consulting firm. Never include client names, internal system names, internal URLs, proprietary architecture details, real data, credentials, API keys, tenant/subscription IDs or screenshots showing any of these. Generalise ("a large enterprise document corpus") and flag anything borderline for the author to confirm.
 
 **Security hygiene in examples.** Secrets come from environment variables (`os.environ["..."]`, `process.env.X`) with a `.env.example`-style mention — never hard-coded, not even fake-looking real-format keys.
 
