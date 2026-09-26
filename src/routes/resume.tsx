@@ -333,10 +333,6 @@ function ResumePage() {
         </div>
       </div>
 
-      {/* Helpful footer tips */}
-      <div className="mt-8 flex justify-center items-center p-4 border-2 border-dashed border-border bg-muted font-mono text-xs text-muted-foreground text-center">
-        <span>⚡ PRO TIP: Downloading this resume grants +15 velocity and +10 morale to your engineering team. 💾</span>
-      </div>
     </div>
   )
 }

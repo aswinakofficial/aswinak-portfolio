@@ -7,7 +7,7 @@ export const Route = createFileRoute('/contact')({
   head: () => ({
     meta: buildPageMeta({
       title: 'Contact',
-      description: 'Get in touch with Aswin AK — AI engineer & full-stack developer open to new roles and opportunities.',
+      description: 'Get in touch with Aswin AK — AI engineer and builder. Happy to talk about AI systems, data pipelines, side projects and interesting problems.',
       slug: 'contact',
     }),
     links: [buildCanonicalLink('contact')],
@@ -25,7 +25,7 @@ function ContactPage() {
       </div>
       <h1 className="text-5xl font-black mb-4 leading-tight">Get in touch</h1>
       <p className="text-muted-foreground text-xl font-medium mb-12 max-w-xl mx-auto">
-        Looking for my next opportunity. Whether you're a recruiter or an engineering team, feel free to reach out directly through any of the channels below.
+        Building something interesting, want to trade notes on RAG and agents, or have an idea worth prototyping? My inbox is open. Email is the quickest way to reach me.
       </p>
 
       <div className="max-w-md mx-auto space-y-4 text-left">
