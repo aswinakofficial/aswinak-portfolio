@@ -39,7 +39,7 @@ Prefer the author's own photos. For body images, suggest placement; for every im
 - ✅ "Lush green Kudremukh hills viewed from the trekking trail"
 - ❌ "Kudremukh trek from Kerala best trekking Karnataka travel blog"
 
-Captions are optional and can keep the author's playful tone; `alt` must stay descriptive.
+Captions are optional and can keep the author's playful tone; `alt` must stay descriptive. In the post body, `![alt](src)` alt text is also rendered as the visible caption, so write it as a clean descriptive caption.
 
 ## FAQ
 
