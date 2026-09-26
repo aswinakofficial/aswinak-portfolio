@@ -18,7 +18,7 @@ AI Engineer experienced in building enterprise semantic systems, RAG, agentic LL
 - **Cloud:** Azure, AWS, Netlify.
 
 ## Projects
-- [Prepora — Exam Question Intelligence Platform](https://aswin.xpar.in/projects/prepora/): Data-engineering project crawling previous-year exam papers into a structured question bank, with RAG, GraphRAG and exam-trend prediction planned.
+- [Prepora — Exam Question Intelligence Platform](https://aswin.xpar.in/projects/prepora/): Data-engineering project crawling previous-year exam papers into a structured question bank, with GraphRAG and exam-trend prediction planned.
 
 ## Blog Posts
 - [ Tailwind CSS — The Framework That Changed How I Write Styles](https://aswin.xpar.in/blog/tailwind-css-the-design-system/): I’ve tried countless CSS frameworks, but Tailwind CSS completely changed the way I approach styling. It’s not “just another utility library” — it’s a design system built for efficiency, scalability, and creative freedom. (Published: 2026-10-21T19:48:59.688Z)
@@ -32,8 +32,8 @@ AI Engineer experienced in building enterprise semantic systems, RAG, agentic LL
 
 ### Project: Prepora — Exam Question Intelligence Platform
 - **URL**: https://aswin.xpar.in/projects/prepora/
-- **Description**: Data-engineering project crawling previous-year exam papers into a structured question bank, with RAG, GraphRAG and exam-trend prediction planned.
-- **Tags**: Data Engineering, Python, TanStack Start, PostgreSQL, RAG
+- **Description**: Data-engineering project crawling previous-year exam papers into a structured question bank, with GraphRAG and exam-trend prediction planned.
+- **Tags**: Data Engineering, Python, TanStack Start, PostgreSQL, GraphRAG
 
 ## The idea
 
@@ -54,7 +54,6 @@ At its core, Prepora is a data-engineering project:
 
 ## Roadmap
 
-- **RAG over the question bank**: natural-language search and grounded explanations for answers
 - **GraphRAG**: a knowledge graph connecting topics, questions and exams, to answer questions like "which topics does this exam keep coming back to?"
 - **Exam-trend prediction**: using years of structured history to surface recurring topics and patterns for upcoming exams. Whether this can predict anything reliably is an open question the project is exploring.
 
