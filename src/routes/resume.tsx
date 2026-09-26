@@ -9,10 +9,10 @@ export const Route = createFileRoute('/resume')({
     meta: [
       ...buildPageMeta({
         title: 'Resume Preview',
-        description: "View and download Aswin AK's resume. AI Engineer specializing in RAG systems, Agentic AI, and full-stack development.",
+        description: "View and download Aswin AK's resume. Product engineer specializing in AI products, RAG systems, agentic AI and full-stack development.",
         slug: 'resume',
       }),
-      { name: 'keywords', content: 'resume, Aswin AK, AI engineer resume, RAG developer, full-stack developer' },
+      { name: 'keywords', content: 'resume, Aswin AK, product engineer resume, AI engineer resume, RAG developer, full-stack developer' },
     ],
     links: [buildCanonicalLink('resume')],
   }),

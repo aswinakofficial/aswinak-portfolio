@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: 'Aswin AK',
-  title: 'Aswin AK — AI Engineer & Full-Stack Developer',
+  title: 'Aswin AK — Product Engineer',
   description:
-    'AI Engineer specializing in RAG pipelines, Agentic AI, LLM orchestration, and full-stack development. Azure AI-102 certified.',
+    'Product engineer building AI-powered products end to end: RAG pipelines, agentic workflows, data pipelines and full-stack apps. Azure AI-102 certified.',
   url: 'https://aswin.xpar.in',
   ogImage: 'https://aswin.xpar.in/og-default.png',
   links: {

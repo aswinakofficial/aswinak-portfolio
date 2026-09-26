@@ -171,7 +171,7 @@ function BlogPostPage() {
                 </div>
                 <div>
                   <div className="font-black text-sm">Aswin AK</div>
-                  <div className="font-mono text-xs text-muted-foreground font-medium">AI Engineer @ EY</div>
+                  <div className="font-mono text-xs text-muted-foreground font-medium">Product Engineer @ EY</div>
                 </div>
               </div>
 
