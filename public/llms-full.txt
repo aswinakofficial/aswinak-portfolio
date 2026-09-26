@@ -18,9 +18,7 @@ AI Engineer experienced in building enterprise semantic systems, RAG, agentic LL
 - **Cloud:** Azure, AWS, Netlify.
 
 ## Projects
-- [RexAI — Agentic Research Assistant](https://aswin.xpar.in/projects/rexai/): Multi-agent research workflow that autonomously gathers, synthesises, and reports on complex topics.
-- [RAG Starter Kit](https://aswin.xpar.in/projects/rag-starter-kit/): Open-source boilerplate for quickly bootstrapping production-grade RAG systems.
-- [Enterprise RAG System](https://aswin.xpar.in/projects/enterprise-rag/): Production RAG pipeline indexing millions of unstructured documents for AI-assisted research.
+- [Prepora — Exam Question Intelligence Platform](https://aswin.xpar.in/projects/prepora/): Data-engineering project crawling previous-year exam papers into a structured question bank, with RAG, GraphRAG and exam-trend prediction planned.
 
 ## Blog Posts
 - [ Tailwind CSS — The Framework That Changed How I Write Styles](https://aswin.xpar.in/blog/tailwind-css-the-design-system/): I’ve tried countless CSS frameworks, but Tailwind CSS completely changed the way I approach styling. It’s not “just another utility library” — it’s a design system built for efficiency, scalability, and creative freedom. (Published: 2026-10-21T19:48:59.688Z)
@@ -32,82 +30,35 @@ AI Engineer experienced in building enterprise semantic systems, RAG, agentic LL
 
 ## Full Details of Projects & Articles
 
-### Project: RexAI — Agentic Research Assistant
-- **URL**: https://aswin.xpar.in/projects/rexai/
-- **Description**: Multi-agent research workflow that autonomously gathers, synthesises, and reports on complex topics.
-- **Tags**: LangChain, N8N, FastAPI, Python, React
+### Project: Prepora — Exam Question Intelligence Platform
+- **URL**: https://aswin.xpar.in/projects/prepora/
+- **Description**: Data-engineering project crawling previous-year exam papers into a structured question bank, with RAG, GraphRAG and exam-trend prediction planned.
+- **Tags**: Data Engineering, Python, TanStack Start, PostgreSQL, RAG
 
-## Overview
+## The idea
 
-RexAI is a multi-agent system designed to automate research workflows. Given a topic or question, it autonomously:
+Previous-year question papers are some of the most useful material for exam preparation, but they're scattered across PDFs, government sites and coaching portals, in inconsistent formats and with no easy way to search them.
 
-1. Searches multiple sources (web, internal docs, databases)
-2. Synthesises findings using a planning LLM
-3. Drafts a structured report with citations
-4. Routes for human review when confidence is low
+Prepora aims to fix that by crawling previous-year papers for exams such as **Kerala PSC, GATE, SSC JE, UPSC** and **Microsoft certifications**, and turning them into one structured, searchable question bank with answers and explanations.
 
-## Architecture
+## What it's built to do
 
-- **Orchestrator agent** built with LangChain + custom tool registry
-- **N8N workflows** for data collection and notification pipelines
-- **FastAPI backend** with async task queue
-- **React frontend** with real-time progress streaming
+At its core, Prepora is a data-engineering project:
 
-## Technical highlights
+- **Crawling and ingestion**: a crawling engine that collects question papers from many sources and exams
+- **Normalisation and deduplication**: turning messy source formats into clean, validated questions and catching repeats across papers
+- **A canonical question model**: each question stored once and linked to every exam and year it appeared in, so you can see how often a question or topic recurs
+- **A fast, SEO-first web app** for browsing exams and question sets
 
-- Custom tool-calling framework with retry logic and rate limiting
-- Human-in-the-loop interrupts for low-confidence decisions
-- Streaming SSE responses for live progress feedback
+**Stack:** TanStack Start + React, Tailwind CSS, PostgreSQL (Neon) with Drizzle ORM, oRPC, Zod, Better Auth, and a Python + FastAPI scraping service.
 
----
+## Roadmap
 
-### Project: RAG Starter Kit
-- **URL**: https://aswin.xpar.in/projects/rag-starter-kit/
-- **Description**: Open-source boilerplate for quickly bootstrapping production-grade RAG systems.
-- **Tags**: Python, LangChain, Docker, FastAPI, Qdrant
+- **RAG over the question bank**: natural-language search and grounded explanations for answers
+- **GraphRAG**: a knowledge graph connecting topics, questions and exams, to answer questions like "which topics does this exam keep coming back to?"
+- **Exam-trend prediction**: using years of structured history to surface recurring topics and patterns for upcoming exams. Whether this can predict anything reliably is an open question the project is exploring.
 
-## Overview
-
-A batteries-included starter kit for building RAG systems without the boilerplate. Includes ingestion, retrieval, evaluation, and a simple chat UI out of the box.
-
-## What's included
-
-- **Ingestion pipeline** with chunking strategies and metadata extraction
-- **Vector store** integration (Qdrant by default, swappable)
-- **FastAPI backend** with OpenAI-compatible `/chat` endpoint
-- **Evaluation harness** using RAGAs metrics
-- **Docker Compose** for local development
-- **GitHub Actions** CI pipeline
-
-## Getting started
-
-Clone the repo and run `docker compose up`. The ingestion pipeline, vector store, and API are ready in under a minute.
-
----
-
-### Project: Enterprise RAG System
-- **URL**: https://aswin.xpar.in/projects/enterprise-rag/
-- **Description**: Production RAG pipeline indexing millions of unstructured documents for AI-assisted research.
-- **Tags**: Databricks, LangChain, Python, Azure, FastAPI
-
-## The challenge
-
-The team needed to make millions of unstructured tax and legal documents searchable by an AI assistant that could provide accurate, grounded answers with citations.
-
-## Solution
-
-Built an end-to-end RAG pipeline on Azure and Databricks:
-
-- **Ingestion**: Document pipeline with semantic chunking, metadata enrichment, and incremental indexing
-- **Retrieval**: Hybrid dense + sparse search with cross-encoder reranking
-- **Generation**: LangChain orchestration with hallucination guards and citation tracking
-- **API**: FastAPI service with streaming responses
-
-## Outcomes
-
-- Indexed 2M+ documents with sub-second retrieval latency
-- 85% reduction in research time for subject-matter experts
-- Hallucination rate below 2% on internal benchmarks
+Prepora is in active development; the repository's roadmap tracks what's being built next.
 
 ---
 

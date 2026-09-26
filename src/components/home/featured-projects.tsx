@@ -7,6 +7,8 @@ import { getAllProjects } from '@/lib/content'
 
 type Category = 'Solutions' | 'Open Source' | 'For Fun'
 
+const categories: Category[] = ['Solutions', 'Open Source', 'For Fun']
+
 const CATEGORY_META: Record<Category, { color: string; swatch: string; blurb: string }> = {
   Solutions: {
     color: '#FF5C00',
@@ -45,8 +47,6 @@ function CategoryDropdown({
     document.addEventListener('mousedown', handler)
     return () => document.removeEventListener('mousedown', handler)
   }, [open])
-
-  const categories: Category[] = ['Solutions', 'Open Source', 'For Fun']
 
   return (
     <div ref={ref} className="relative">
@@ -110,7 +110,6 @@ function CategoryDropdown({
 }
 
 export function FeaturedProjects() {
-  const [category, setCategory] = useState<Category>('Solutions')
   const allProjects = getAllProjects()
 
   const counts = {
@@ -118,6 +117,11 @@ export function FeaturedProjects() {
     'Open Source': allProjects.filter((p) => p.frontmatter.category === 'Open Source').length,
     'For Fun': allProjects.filter((p) => p.frontmatter.category === 'For Fun').length,
   }
+
+  // Open on the first category that has projects so the section never starts empty
+  const [category, setCategory] = useState<Category>(
+    () => categories.find((c) => counts[c] > 0) ?? 'Solutions'
+  )
 
   const projects = allProjects
     .filter((p) => p.frontmatter.category === category)
